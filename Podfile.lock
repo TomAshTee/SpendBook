@@ -1,0 +1,17 @@
+PODS:
+  - Charts (3.0.4):
+    - Charts/Core (= 3.0.4)
+  - Charts/Core (3.0.4)
+  - Hero (1.0.1)
+
+DEPENDENCIES:
+  - Charts (~> 3.0)
+  - Hero (~> 1.0)
+
+SPEC CHECKSUMS:
+  Charts: 0705898046257443f0afbbc3179f4b67507b6e48
+  Hero: cee286821578e170d8c0c9c9cda7897357401112
+
+PODFILE CHECKSUM: 43c6f3b1f7a2f30c2634d8e349079173ce61544a
+
+COCOAPODS: 1.4.0

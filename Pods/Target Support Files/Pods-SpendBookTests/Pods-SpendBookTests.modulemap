@@ -1,0 +1,6 @@
+framework module Pods_SpendBookTests {
+  umbrella header "Pods-SpendBookTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
