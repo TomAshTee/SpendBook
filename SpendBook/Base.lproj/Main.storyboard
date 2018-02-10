@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Book</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Item 2-->
         <scene sceneID="gq4-py-Ipv">
@@ -24,7 +29,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DZ4-ve-k4Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="759" y="761"/>
+            <point key="canvasLocation" x="758" y="1048"/>
         </scene>
         <!--Main-->
         <scene sceneID="PzM-VA-IX2">
@@ -34,23 +39,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ovm-N0-5uN" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="10" y="90" width="355" height="498"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="GkZ-DC-2K8">
+                                <rect key="frame" x="0.0" y="282" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nA4-ZD-eAk">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="50"/>
+                                        <color key="backgroundColor" red="0.94509803921568625" green="0.36470588235294116" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
+                                        <state key="normal" title="WITHDRAW">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vc4-77-lnJ">
+                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="50"/>
+                                        <color key="backgroundColor" red="0.23529411764705882" green="0.82745098039215681" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
+                                        <state key="normal" title="ADD">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="qiA-J3-2p2"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5e-sz-s4p" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="20" width="375" height="254"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="254" id="aoh-y6-qxR"/>
+                                </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.32941176470588235" green="0.31764705882352939" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="ovm-N0-5uN" firstAttribute="leading" secondItem="VjT-Cm-JGw" secondAttribute="leading" constant="10" id="Omq-w4-CYg"/>
-                            <constraint firstItem="VjT-Cm-JGw" firstAttribute="bottom" secondItem="ovm-N0-5uN" secondAttribute="bottom" constant="30" id="XHx-DB-8VW"/>
-                            <constraint firstItem="VjT-Cm-JGw" firstAttribute="trailing" secondItem="ovm-N0-5uN" secondAttribute="trailing" constant="10" id="jWm-lP-Grh"/>
-                            <constraint firstItem="ovm-N0-5uN" firstAttribute="top" secondItem="VjT-Cm-JGw" secondAttribute="top" constant="70" id="qcg-Ri-W5I"/>
+                            <constraint firstItem="VjT-Cm-JGw" firstAttribute="trailing" secondItem="GkZ-DC-2K8" secondAttribute="trailing" id="0kC-bi-ix3"/>
+                            <constraint firstItem="VjT-Cm-JGw" firstAttribute="trailing" secondItem="P5e-sz-s4p" secondAttribute="trailing" id="3wO-3o-M79"/>
+                            <constraint firstItem="P5e-sz-s4p" firstAttribute="leading" secondItem="VjT-Cm-JGw" secondAttribute="leading" id="4kZ-Cu-TN6"/>
+                            <constraint firstItem="GkZ-DC-2K8" firstAttribute="top" secondItem="P5e-sz-s4p" secondAttribute="bottom" constant="8" id="Fal-13-lfi"/>
+                            <constraint firstItem="GkZ-DC-2K8" firstAttribute="leading" secondItem="VjT-Cm-JGw" secondAttribute="leading" id="MmH-El-RFk"/>
+                            <constraint firstItem="P5e-sz-s4p" firstAttribute="top" secondItem="VjT-Cm-JGw" secondAttribute="top" id="lB0-6v-mbS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VjT-Cm-JGw"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" id="qlf-Ef-tRr"/>
                     <connections>
-                        <outlet property="lineChartView" destination="ovm-N0-5uN" id="Zka-oX-6uc"/>
+                        <outlet property="addBtn" destination="Vc4-77-lnJ" id="z3T-CK-Q60"/>
+                        <outlet property="summaryPieChartView" destination="P5e-sz-s4p" id="UEG-Km-Xdx"/>
+                        <outlet property="withdrawBtn" destination="nA4-ZD-eAk" id="pnO-AL-FrH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dqA-Yj-WSD" userLabel="First Responder" sceneMemberID="firstResponder"/>
