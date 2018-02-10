@@ -14,9 +14,6 @@ class MainVC: UIViewController {
 
     // Outlets
     
-    @IBOutlet weak var summaryPieChartView: PieChartView!
-    
-    
     @IBOutlet weak var addBtn: UIButton!
     @IBOutlet weak var withdrawBtn: UIButton!
     // Test data
@@ -26,41 +23,19 @@ class MainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*
+        addBtn.layer.cornerRadius = addBtn.frame.size.height / 2
+        addBtn.layer.masksToBounds = true
+        addBtn.setGradientBackground(colorOne: #colorLiteral(red: 0.09411764706, green: 0.4412631798, blue: 0.9411764706, alpha: 1), colorTwo: #colorLiteral(red: 0.4274509804, green: 0.9210339206, blue: 0.9529411765, alpha: 1))
         
-        setChart(dataPoints: categories, values: valueOfCategories)
+        withdrawBtn.layer.cornerRadius = addBtn.frame.size.height / 2
+        withdrawBtn.layer.masksToBounds = true
+        withdrawBtn.setGradientBackground(colorOne: #colorLiteral(red: 0.9450980392, green: 0.2372768683, blue: 0.7148683176, alpha: 1), colorTwo: #colorLiteral(red: 1, green: 0.6078431373, blue: 0.7843137255, alpha: 1))
+        */
 
         // Do any additional setup after loading the view.
     }
     
-    func setChart(dataPoints: [String], values: [Double]) {
-        var dataEntries = [PieChartDataEntry]()
-        
-        // Set a dataEntries
-        for i in 0..<dataPoints.count {
-            let dataEntry = PieChartDataEntry(value: values[i], label: dataPoints[i])
-            dataEntries.append(dataEntry)
-        }
-        
-        // Set color
-        var randomColors = [UIColor]()
-        for i in 0..<dataPoints.count {
-            let randomColor = UIColor.randomFlat()
-            randomColors.append(randomColor!)
-        }
-        
-        // Set up summaryPieChart
-        let summaryPieChartDataSet = PieChartDataSet(values: dataEntries, label: "Summary")
-        summaryPieChartDataSet.colors = randomColors
-        let summaryPieChartData = PieChartData(dataSet: summaryPieChartDataSet)
-        summaryPieChartView.data = summaryPieChartData
-        summaryPieChartView.chartDescription?.text = ""
-        summaryPieChartView.holeColor = UIColor.clear
-        //summaryPieChartView.legend.enabled = false
-        summaryPieChartView.animate(yAxisDuration: 1.0)
-        
-        
-        
-    }
 }
 
 

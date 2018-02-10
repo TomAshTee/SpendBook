@@ -39,53 +39,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="GkZ-DC-2K8">
-                                <rect key="frame" x="0.0" y="282" width="375" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GkZ-DC-2K8">
+                                <rect key="frame" x="22" y="270" width="331" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nA4-ZD-eAk">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nA4-ZD-eAk" customClass="RoundedButton" customModule="SpendBook" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="155.5" height="40"/>
                                         <color key="backgroundColor" red="0.94509803921568625" green="0.36470588235294116" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
                                         <state key="normal" title="WITHDRAW">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vc4-77-lnJ">
-                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vc4-77-lnJ" customClass="RoundedButton" customModule="SpendBook" customModuleProvider="target">
+                                        <rect key="frame" x="175.5" y="0.0" width="155.5" height="40"/>
                                         <color key="backgroundColor" red="0.23529411764705882" green="0.82745098039215681" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
                                         <state key="normal" title="ADD">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="qiA-J3-2p2"/>
+                                    <constraint firstAttribute="height" constant="40" id="Sqb-SM-MwC"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5e-sz-s4p" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="20" width="375" height="254"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="254" id="aoh-y6-qxR"/>
-                                </constraints>
-                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.32941176470588235" green="0.31764705882352939" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="VjT-Cm-JGw" firstAttribute="trailing" secondItem="GkZ-DC-2K8" secondAttribute="trailing" id="0kC-bi-ix3"/>
-                            <constraint firstItem="VjT-Cm-JGw" firstAttribute="trailing" secondItem="P5e-sz-s4p" secondAttribute="trailing" id="3wO-3o-M79"/>
-                            <constraint firstItem="P5e-sz-s4p" firstAttribute="leading" secondItem="VjT-Cm-JGw" secondAttribute="leading" id="4kZ-Cu-TN6"/>
-                            <constraint firstItem="GkZ-DC-2K8" firstAttribute="top" secondItem="P5e-sz-s4p" secondAttribute="bottom" constant="8" id="Fal-13-lfi"/>
-                            <constraint firstItem="GkZ-DC-2K8" firstAttribute="leading" secondItem="VjT-Cm-JGw" secondAttribute="leading" id="MmH-El-RFk"/>
-                            <constraint firstItem="P5e-sz-s4p" firstAttribute="top" secondItem="VjT-Cm-JGw" secondAttribute="top" id="lB0-6v-mbS"/>
+                            <constraint firstItem="GkZ-DC-2K8" firstAttribute="leading" secondItem="VjT-Cm-JGw" secondAttribute="leading" constant="22" id="9hB-86-a0j"/>
+                            <constraint firstItem="GkZ-DC-2K8" firstAttribute="top" secondItem="VjT-Cm-JGw" secondAttribute="top" constant="250" id="RIC-lg-06R"/>
+                            <constraint firstItem="VjT-Cm-JGw" firstAttribute="trailing" secondItem="GkZ-DC-2K8" secondAttribute="trailing" constant="22" id="S2P-NJ-Cqq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VjT-Cm-JGw"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" id="qlf-Ef-tRr"/>
                     <connections>
                         <outlet property="addBtn" destination="Vc4-77-lnJ" id="z3T-CK-Q60"/>
-                        <outlet property="summaryPieChartView" destination="P5e-sz-s4p" id="UEG-Km-Xdx"/>
                         <outlet property="withdrawBtn" destination="nA4-ZD-eAk" id="pnO-AL-FrH"/>
                     </connections>
                 </viewController>
