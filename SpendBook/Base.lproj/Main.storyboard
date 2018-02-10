@@ -24,23 +24,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DZ4-ve-k4Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="760" y="322"/>
+            <point key="canvasLocation" x="759" y="761"/>
         </scene>
-        <!--Item 1-->
+        <!--Main-->
         <scene sceneID="PzM-VA-IX2">
             <objects>
-                <viewController id="sx7-IP-LYa" sceneMemberID="viewController">
+                <viewController id="sx7-IP-LYa" customClass="MainVC" customModule="SpendBook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZwE-0u-O6M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ovm-N0-5uN" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="10" y="90" width="355" height="498"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ovm-N0-5uN" firstAttribute="leading" secondItem="VjT-Cm-JGw" secondAttribute="leading" constant="10" id="Omq-w4-CYg"/>
+                            <constraint firstItem="VjT-Cm-JGw" firstAttribute="bottom" secondItem="ovm-N0-5uN" secondAttribute="bottom" constant="30" id="XHx-DB-8VW"/>
+                            <constraint firstItem="VjT-Cm-JGw" firstAttribute="trailing" secondItem="ovm-N0-5uN" secondAttribute="trailing" constant="10" id="jWm-lP-Grh"/>
+                            <constraint firstItem="ovm-N0-5uN" firstAttribute="top" secondItem="VjT-Cm-JGw" secondAttribute="top" constant="70" id="qcg-Ri-W5I"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="VjT-Cm-JGw"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="qlf-Ef-tRr"/>
+                    <tabBarItem key="tabBarItem" title="Main" id="qlf-Ef-tRr"/>
+                    <connections>
+                        <outlet property="lineChartView" destination="ovm-N0-5uN" id="Zka-oX-6uc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dqA-Yj-WSD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="760" y="-342"/>
+            <point key="canvasLocation" x="758" y="-11"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="TPo-y6-JPN">
