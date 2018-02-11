@@ -18,6 +18,10 @@
 		D64F1D7F202CD72300956B2B /* SpendBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64F1D7E202CD72300956B2B /* SpendBookTests.swift */; };
 		D64F1DAE202E0CC000956B2B /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64F1DAD202E0CC000956B2B /* MainVC.swift */; };
 		D6C4F5D6202F4A40004DADF4 /* GradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5D5202F4A40004DADF4 /* GradientLayer.swift */; };
+		D6C4F5D820304A8A004DADF4 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5D720304A8A004DADF4 /* SettingsVC.swift */; };
+		D6C4F5DA20304B1D004DADF4 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5D920304B1D004DADF4 /* HistoryVC.swift */; };
+		D6C4F5DC20304D91004DADF4 /* SavingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5DB20304D91004DADF4 /* SavingsVC.swift */; };
+		D6C4F5DE20304DA7004DADF4 /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5DD20304DA7004DADF4 /* AlarmVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +54,10 @@
 		D64F1D80202CD72300956B2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D64F1DAD202E0CC000956B2B /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		D6C4F5D5202F4A40004DADF4 /* GradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLayer.swift; sourceTree = "<group>"; };
+		D6C4F5D720304A8A004DADF4 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		D6C4F5D920304B1D004DADF4 /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
+		D6C4F5DB20304D91004DADF4 /* SavingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsVC.swift; sourceTree = "<group>"; };
+		D6C4F5DD20304DA7004DADF4 /* AlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +166,10 @@
 			isa = PBXGroup;
 			children = (
 				D64F1DAD202E0CC000956B2B /* MainVC.swift */,
+				D6C4F5D720304A8A004DADF4 /* SettingsVC.swift */,
+				D6C4F5D920304B1D004DADF4 /* HistoryVC.swift */,
+				D6C4F5DB20304D91004DADF4 /* SavingsVC.swift */,
+				D6C4F5DD20304DA7004DADF4 /* AlarmVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -384,11 +396,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6C4F5DA20304B1D004DADF4 /* HistoryVC.swift in Sources */,
+				D6C4F5DE20304DA7004DADF4 /* AlarmVC.swift in Sources */,
 				D64F1D6F202CD72300956B2B /* SpendBook.xcdatamodeld in Sources */,
 				D6C4F5D6202F4A40004DADF4 /* GradientLayer.swift in Sources */,
 				D64F1DAE202E0CC000956B2B /* MainVC.swift in Sources */,
 				D64F1D67202CD72300956B2B /* AppDelegate.swift in Sources */,
 				D62B97A7202F3E2A00E4FAD7 /* RoundedButton.swift in Sources */,
+				D6C4F5DC20304D91004DADF4 /* SavingsVC.swift in Sources */,
+				D6C4F5D820304A8A004DADF4 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
