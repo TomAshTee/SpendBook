@@ -9,28 +9,43 @@
 import UIKit
 import Charts
 import ChameleonFramework
+import CoreData
 
 class MainVC: UIViewController {
 
     // Outlets
     
+    @IBOutlet weak var historyTableView: UITableView!
     @IBOutlet weak var summaryLbl: UILabel!
     @IBOutlet weak var todayLbl: UILabel!
     @IBOutlet weak var mountLbl: UILabel!
     @IBOutlet weak var addBtn: UIButton!
     @IBOutlet weak var withdrawBtn: UIButton!
-    // Test data
-    let categories = ["Food", "Rent", "Health", "Clothing","Travels"]
-    let valueOfCategories = [340.0, 204.0, 30.0, 122.0, 263.0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        historyTableView.delegate = self
+        historyTableView.dataSource = self
+        historyTableView.isHidden = false
         
-
-        // Do any additional setup after loading the view.
     }
-    
+}
+
+extension MainVC: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 8
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = historyTableView.dequeueReusableCell(withIdentifier: "todayHistoryCell") as? TodayHistoryCell else {
+            return UITableViewCell()
+        }
+        cell.configureCell(category: "Food", transactionValue: 69)
+        return cell
+    }
 }
 
 

@@ -16,7 +16,7 @@ class TodayHistoryCell: UITableViewCell {
     
     func configureCell(category: String, transactionValue: Int){
         self.categoryLbl.text = category
-        self.transactionValueLbl.text = String(transactionValue)
+        self.transactionValueLbl.text = "$" + String(transactionValue)
     }
 
 }
