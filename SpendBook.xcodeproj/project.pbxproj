@@ -22,6 +22,7 @@
 		D6C4F5DA20304B1D004DADF4 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5D920304B1D004DADF4 /* HistoryVC.swift */; };
 		D6C4F5DC20304D91004DADF4 /* SavingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5DB20304D91004DADF4 /* SavingsVC.swift */; };
 		D6C4F5DE20304DA7004DADF4 /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5DD20304DA7004DADF4 /* AlarmVC.swift */; };
+		D6C4F5E020305A3D004DADF4 /* TodayHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5DF20305A3D004DADF4 /* TodayHistoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		D6C4F5D920304B1D004DADF4 /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 		D6C4F5DB20304D91004DADF4 /* SavingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsVC.swift; sourceTree = "<group>"; };
 		D6C4F5DD20304DA7004DADF4 /* AlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmVC.swift; sourceTree = "<group>"; };
+		D6C4F5DF20305A3D004DADF4 /* TodayHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHistoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 			children = (
 				D62B97A6202F3E2A00E4FAD7 /* RoundedButton.swift */,
 				D6C4F5D5202F4A40004DADF4 /* GradientLayer.swift */,
+				D6C4F5DF20305A3D004DADF4 /* TodayHistoryCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				D64F1D67202CD72300956B2B /* AppDelegate.swift in Sources */,
 				D62B97A7202F3E2A00E4FAD7 /* RoundedButton.swift in Sources */,
 				D6C4F5DC20304D91004DADF4 /* SavingsVC.swift in Sources */,
+				D6C4F5E020305A3D004DADF4 /* TodayHistoryCell.swift in Sources */,
 				D6C4F5D820304A8A004DADF4 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

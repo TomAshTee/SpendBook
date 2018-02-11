@@ -14,6 +14,9 @@ class MainVC: UIViewController {
 
     // Outlets
     
+    @IBOutlet weak var summaryLbl: UILabel!
+    @IBOutlet weak var todayLbl: UILabel!
+    @IBOutlet weak var mountLbl: UILabel!
     @IBOutlet weak var addBtn: UIButton!
     @IBOutlet weak var withdrawBtn: UIButton!
     // Test data
