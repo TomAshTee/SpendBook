@@ -11,11 +11,11 @@ import UIKit
 class TodayHistoryCell: UITableViewCell {
 
     // Otlets
-    @IBOutlet weak var categoryLbl: UILabel!
+    @IBOutlet weak var typeLbl: UILabel!
     @IBOutlet weak var transactionValueLbl: UILabel!
     
-    func configureCell(category: String, transactionValue: Int){
-        self.categoryLbl.text = category
+    func configureCell(type: TransactionType, transactionValue: Int){
+        self.typeLbl.text = type.rawValue
         self.transactionValueLbl.text = "$" + String(transactionValue)
     }
 

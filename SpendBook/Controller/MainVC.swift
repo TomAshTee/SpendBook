@@ -10,6 +10,7 @@ import UIKit
 import Charts
 import ChameleonFramework
 import CoreData
+import Hero
 
 class MainVC: UIViewController {
 
@@ -28,7 +29,7 @@ class MainVC: UIViewController {
         historyTableView.delegate = self
         historyTableView.dataSource = self
         historyTableView.isHidden = false
-        
+    
     }
 }
 
@@ -43,7 +44,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = historyTableView.dequeueReusableCell(withIdentifier: "todayHistoryCell") as? TodayHistoryCell else {
             return UITableViewCell()
         }
-        cell.configureCell(category: "Food", transactionValue: 69)
+        cell.configureCell(type: .Game, transactionValue: 69)
         return cell
     }
 }

@@ -16,6 +16,7 @@ class RoundedButton: UIButton{
             self.setUpView()
         }
     }
+    
     override func awakeFromNib() {
         self.setUpView()
     }

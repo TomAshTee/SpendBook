@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		72485069D8C12E102734F38C /* Pods_SpendBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EE74FCB7785BAD8073FA468 /* Pods_SpendBookTests.framework */; };
 		9060E83B795416E4C1F66C8A /* Pods_SpendBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF88BC616B3F4CA6DCBFD6E /* Pods_SpendBook.framework */; };
+		D600172E20323AD700DB4DD9 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D600172D20323AD700DB4DD9 /* UserSettings.swift */; };
 		D62B97A7202F3E2A00E4FAD7 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62B97A6202F3E2A00E4FAD7 /* RoundedButton.swift */; };
 		D64F1D67202CD72300956B2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64F1D66202CD72300956B2B /* AppDelegate.swift */; };
 		D64F1D6C202CD72300956B2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D64F1D6A202CD72300956B2B /* Main.storyboard */; };
@@ -17,6 +18,8 @@
 		D64F1D74202CD72300956B2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D64F1D72202CD72300956B2B /* LaunchScreen.storyboard */; };
 		D64F1D7F202CD72300956B2B /* SpendBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64F1D7E202CD72300956B2B /* SpendBookTests.swift */; };
 		D64F1DAE202E0CC000956B2B /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64F1DAD202E0CC000956B2B /* MainVC.swift */; };
+		D66937822031EBF90078228D /* AnimateTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66937812031EBF90078228D /* AnimateTableView.swift */; };
+		D66937892031F8E80078228D /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66937882031F8E80078228D /* TransactionType.swift */; };
 		D6C4F5D6202F4A40004DADF4 /* GradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5D5202F4A40004DADF4 /* GradientLayer.swift */; };
 		D6C4F5D820304A8A004DADF4 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5D720304A8A004DADF4 /* SettingsVC.swift */; };
 		D6C4F5DA20304B1D004DADF4 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5D920304B1D004DADF4 /* HistoryVC.swift */; };
@@ -42,6 +45,7 @@
 		4C81E39D3DD5EE60C12D9A71 /* Pods-SpendBookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpendBookTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpendBookTests/Pods-SpendBookTests.release.xcconfig"; sourceTree = "<group>"; };
 		8EE74FCB7785BAD8073FA468 /* Pods_SpendBookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpendBookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E02791FC84112687C8B5B8 /* Pods-SpendBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpendBookTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpendBookTests/Pods-SpendBookTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D600172D20323AD700DB4DD9 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		D62B97A6202F3E2A00E4FAD7 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		D64F1D63202CD72300956B2B /* SpendBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpendBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D64F1D66202CD72300956B2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 		D64F1D7E202CD72300956B2B /* SpendBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendBookTests.swift; sourceTree = "<group>"; };
 		D64F1D80202CD72300956B2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D64F1DAD202E0CC000956B2B /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		D66937812031EBF90078228D /* AnimateTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateTableView.swift; sourceTree = "<group>"; };
+		D66937882031F8E80078228D /* TransactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
 		D6C4F5D5202F4A40004DADF4 /* GradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLayer.swift; sourceTree = "<group>"; };
 		D6C4F5D720304A8A004DADF4 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		D6C4F5D920304B1D004DADF4 /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
@@ -125,6 +131,7 @@
 		D64F1D65202CD72300956B2B /* SpendBook */ = {
 			isa = PBXGroup;
 			children = (
+				D66937832031F13A0078228D /* Enums */,
 				D64F1DAC202E0C9E00956B2B /* Utilities */,
 				D64F1DAB202E0C9700956B2B /* Controller */,
 				D64F1DAA202E0C8E00956B2B /* View */,
@@ -151,6 +158,7 @@
 		D64F1DA9202E0C8700956B2B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D600172D20323AD700DB4DD9 /* UserSettings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -161,6 +169,7 @@
 				D62B97A6202F3E2A00E4FAD7 /* RoundedButton.swift */,
 				D6C4F5D5202F4A40004DADF4 /* GradientLayer.swift */,
 				D6C4F5DF20305A3D004DADF4 /* TodayHistoryCell.swift */,
+				D66937812031EBF90078228D /* AnimateTableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -182,6 +191,14 @@
 			children = (
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D66937832031F13A0078228D /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				D66937882031F8E80078228D /* TransactionType.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,6 +419,9 @@
 				D6C4F5DA20304B1D004DADF4 /* HistoryVC.swift in Sources */,
 				D6C4F5DE20304DA7004DADF4 /* AlarmVC.swift in Sources */,
 				D64F1D6F202CD72300956B2B /* SpendBook.xcdatamodeld in Sources */,
+				D66937822031EBF90078228D /* AnimateTableView.swift in Sources */,
+				D600172E20323AD700DB4DD9 /* UserSettings.swift in Sources */,
+				D66937892031F8E80078228D /* TransactionType.swift in Sources */,
 				D6C4F5D6202F4A40004DADF4 /* GradientLayer.swift in Sources */,
 				D64F1DAE202E0CC000956B2B /* MainVC.swift in Sources */,
 				D64F1D67202CD72300956B2B /* AppDelegate.swift in Sources */,
