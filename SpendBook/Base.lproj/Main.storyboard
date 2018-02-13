@@ -206,6 +206,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="transactionValueLbl" destination="UHJ-3o-rNN" id="471-eM-sDk"/>
+                                            <outlet property="typeImg" destination="G1R-Gp-ITY" id="PFK-Dx-pW6"/>
                                             <outlet property="typeLbl" destination="Hax-5v-F5h" id="1vC-c9-XBl"/>
                                         </connections>
                                     </tableViewCell>
@@ -397,6 +398,9 @@
                             </view>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cxD-sa-Bf8">
                                 <rect key="frame" x="255" y="83" width="51" height="31"/>
+                                <connections>
+                                    <action selector="isHistoryIconEnableChange:" destination="0Wg-BX-BjR" eventType="valueChanged" id="bLg-21-a7I"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable today history icon:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVQ-p2-a0n">
                                 <rect key="frame" x="16" y="86" width="185" height="22"/>
@@ -432,6 +436,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XK6-jd-Pxb"/>
                     </view>
+                    <connections>
+                        <outlet property="historyIconSwitch" destination="cxD-sa-Bf8" id="apU-IP-4Md"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kim-qM-wVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -23,6 +23,9 @@ class MainVC: UIViewController {
     @IBOutlet weak var addBtn: UIButton!
     @IBOutlet weak var withdrawBtn: UIButton!
     
+    // Only for test te icon
+    var iconList = [TransactionType.Car, TransactionType.Cosmetic, TransactionType.Food, TransactionType.Game, TransactionType.Health, TransactionType.Home, TransactionType.Hygiene, TransactionType.Other, TransactionType.Receipt, TransactionType.Rent, TransactionType.Sport, TransactionType.Study, TransactionType.Transport, TransactionType.Travel]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +34,9 @@ class MainVC: UIViewController {
         historyTableView.isHidden = false
     
     }
+    override func viewWillAppear(_ animated: Bool) {
+        historyTableView.reloadData()
+    }
 }
 
 extension MainVC: UITableViewDelegate, UITableViewDataSource {
@@ -38,15 +44,17 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return iconList.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         guard let cell = historyTableView.dequeueReusableCell(withIdentifier: "todayHistoryCell") as? TodayHistoryCell else {
             return UITableViewCell()
         }
-        cell.configureCell(type: .Game, transactionValue: 69)
+        cell.configureCell(type: iconList[indexPath.row], transactionValue: 69)
         return cell
     }
+    
 }
 
 
