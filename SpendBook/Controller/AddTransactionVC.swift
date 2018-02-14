@@ -46,7 +46,13 @@ class AddTransactionVC: UIViewController{
     }
 
     @objc func setTransaction(){
-        dismissView()
+        if valueTextField.text != "" {
+            self.save(completion: { (complete) in
+                if complete {
+                    dismissView()
+                }
+            })
+        }
     }
     
     // Actions
@@ -54,9 +60,43 @@ class AddTransactionVC: UIViewController{
         dismissView()
     }
     
+    // Func
     func dismissView() {
         view.endEditing(true)
         dismiss(animated: true, completion: nil)
+    }
+    
+    // Save to CoreData
+    func save(completion: (_ finished: Bool)->()){
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        let transaction = Transaction(context: managedContext)
+        
+        // Feel Entity
+        transaction.type = IconManager.instance.getIconList()[typePicker.selectedRow(inComponent: 0)]
+        guard let value = Int32(valueTextField.text!) else {
+            print("Wrong value for Text Filed")
+            return
+        }
+        transaction.value = value
+        let date = Date()
+        let calendar = Calendar.current
+        let formater = DateFormatter()
+        transaction.day = Int16(calendar.component(.day, from: date))
+        transaction.month = Int16(calendar.component(.month, from: date))
+        transaction.year = Int16(calendar.component(.year, from: date))
+        transaction.hour = Int16(calendar.component(.hour, from: date))
+        transaction.minute = Int16(calendar.component(.minute, from: date))
+        formater.dateFormat = "yyyy-MM-dd HH:mm"
+        transaction.data = formater.string(from: date)
+        
+        // Save
+        do {
+            try managedContext.save()
+            completion(true)
+        } catch {
+            debugPrint("Could not save: \(error.localizedDescription)")
+            completion(false)
+        }
     }
 }
 

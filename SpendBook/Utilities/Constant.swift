@@ -6,9 +6,8 @@
 //  Copyright © 2018 Tomasz Jaeschke. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-// Segues
+let appDelegate = UIApplication.shared.delegate as? AppDelegate
 
-let UNWIND_TO_TODAY = "unwindToToday"
 
