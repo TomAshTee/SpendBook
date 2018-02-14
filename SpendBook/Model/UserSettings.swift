@@ -12,11 +12,4 @@ final class UserSettings {
     
     static let instance = UserSettings()
     
-    var isHistoryIconEnable: Bool
-    
-    init() {
-        // Download data from CoreData
-        isHistoryIconEnable = false
-        
-    }
 }

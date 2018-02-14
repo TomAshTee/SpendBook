@@ -15,14 +15,14 @@ class TodayHistoryCell: UITableViewCell {
     @IBOutlet weak var transactionValueLbl: UILabel!
     @IBOutlet weak var typeImg: UIImageView!
     
-    func configureCell(type: TransactionType, transactionValue: Int){
+    func configureCell(type: String, transactionValue: Int){
         
-        if UserSettings.instance.isHistoryIconEnable {
+        if IconManager.instance.isIconEnable() {
             typeLbl.text = ""
             typeImg.isHidden = false
-            typeImg.image = UIImage(named: type.rawValue)
+            typeImg.image = UIImage(named: type)
         } else {
-            typeLbl.text = type.rawValue
+            typeLbl.text = type
             typeImg.isHidden = true
         }
         

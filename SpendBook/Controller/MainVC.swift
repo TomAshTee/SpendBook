@@ -34,6 +34,19 @@ class MainVC: UIViewController, HeroViewControllerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         historyTableView.reloadData()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let viewController = segue.destination as? AddTransactionVC, let sender = sender as? UIButton {
+            viewController.setTransactionBtn.backgroundColor = sender.backgroundColor
+            viewController.colorForTransaction = sender.backgroundColor!
+            
+            if sender.currentImage == #imageLiteral(resourceName: "Icon-plus"){
+                viewController.textForDolarLbl = "$"
+            } else if sender.currentImage == #imageLiteral(resourceName: "Icon-minus") {
+                viewController.textForDolarLbl = "$-"
+            }
+        }
+    }
 }
 
 extension MainVC: UITableViewDelegate, UITableViewDataSource {
@@ -41,14 +54,14 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return iconList.count
+        return IconManager.instance.countIcon()
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = historyTableView.dequeueReusableCell(withIdentifier: "todayHistoryCell") as? TodayHistoryCell else {
             return UITableViewCell()
         }
-        cell.configureCell(type: iconList[indexPath.row], transactionValue: 69)
+        cell.configureCell(type: IconManager.instance.getIconList()[indexPath.row], transactionValue: 69)
         return cell
     }
     

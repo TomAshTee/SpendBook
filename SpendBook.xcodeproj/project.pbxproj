@@ -12,6 +12,7 @@
 		D600172E20323AD700DB4DD9 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D600172D20323AD700DB4DD9 /* UserSettings.swift */; };
 		D6050ED12033437500B50184 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6050ED02033437500B50184 /* Constant.swift */; };
 		D6050ED8203402FA00B50184 /* AddTransactionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6050ED7203402FA00B50184 /* AddTransactionVC.swift */; };
+		D6050EDA2034AC9B00B50184 /* IconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6050ED92034AC9B00B50184 /* IconManager.swift */; };
 		D62B97A7202F3E2A00E4FAD7 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62B97A6202F3E2A00E4FAD7 /* RoundedButton.swift */; };
 		D64F1D67202CD72300956B2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64F1D66202CD72300956B2B /* AppDelegate.swift */; };
 		D64F1D6C202CD72300956B2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D64F1D6A202CD72300956B2B /* Main.storyboard */; };
@@ -21,7 +22,6 @@
 		D64F1D7F202CD72300956B2B /* SpendBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64F1D7E202CD72300956B2B /* SpendBookTests.swift */; };
 		D64F1DAE202E0CC000956B2B /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64F1DAD202E0CC000956B2B /* MainVC.swift */; };
 		D66937822031EBF90078228D /* AnimateTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66937812031EBF90078228D /* AnimateTableView.swift */; };
-		D66937892031F8E80078228D /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66937882031F8E80078228D /* TransactionType.swift */; };
 		D6C4F5D6202F4A40004DADF4 /* GradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5D5202F4A40004DADF4 /* GradientLayer.swift */; };
 		D6C4F5D820304A8A004DADF4 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5D720304A8A004DADF4 /* SettingsVC.swift */; };
 		D6C4F5DA20304B1D004DADF4 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5D920304B1D004DADF4 /* HistoryVC.swift */; };
@@ -50,6 +50,7 @@
 		D600172D20323AD700DB4DD9 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		D6050ED02033437500B50184 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		D6050ED7203402FA00B50184 /* AddTransactionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionVC.swift; sourceTree = "<group>"; };
+		D6050ED92034AC9B00B50184 /* IconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconManager.swift; sourceTree = "<group>"; };
 		D62B97A6202F3E2A00E4FAD7 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		D64F1D63202CD72300956B2B /* SpendBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpendBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D64F1D66202CD72300956B2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		D64F1D80202CD72300956B2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D64F1DAD202E0CC000956B2B /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		D66937812031EBF90078228D /* AnimateTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateTableView.swift; sourceTree = "<group>"; };
-		D66937882031F8E80078228D /* TransactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
 		D6C4F5D5202F4A40004DADF4 /* GradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLayer.swift; sourceTree = "<group>"; };
 		D6C4F5D720304A8A004DADF4 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		D6C4F5D920304B1D004DADF4 /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
@@ -163,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				D600172D20323AD700DB4DD9 /* UserSettings.swift */,
+				D6050ED92034AC9B00B50184 /* IconManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -202,7 +203,6 @@
 		D66937832031F13A0078228D /* Enums */ = {
 			isa = PBXGroup;
 			children = (
-				D66937882031F8E80078228D /* TransactionType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -422,13 +422,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6050EDA2034AC9B00B50184 /* IconManager.swift in Sources */,
 				D6050ED8203402FA00B50184 /* AddTransactionVC.swift in Sources */,
 				D6C4F5DA20304B1D004DADF4 /* HistoryVC.swift in Sources */,
 				D6C4F5DE20304DA7004DADF4 /* AlarmVC.swift in Sources */,
 				D64F1D6F202CD72300956B2B /* SpendBook.xcdatamodeld in Sources */,
 				D66937822031EBF90078228D /* AnimateTableView.swift in Sources */,
 				D600172E20323AD700DB4DD9 /* UserSettings.swift in Sources */,
-				D66937892031F8E80078228D /* TransactionType.swift in Sources */,
 				D6C4F5D6202F4A40004DADF4 /* GradientLayer.swift in Sources */,
 				D6050ED12033437500B50184 /* Constant.swift in Sources */,
 				D64F1DAE202E0CC000956B2B /* MainVC.swift in Sources */,

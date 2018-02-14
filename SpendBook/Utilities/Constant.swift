@@ -12,5 +12,3 @@ import Foundation
 
 let UNWIND_TO_TODAY = "unwindToToday"
 
-// Only for test te icon
-var iconList = [TransactionType.Car, TransactionType.Cosmetic, TransactionType.Food, TransactionType.Game, TransactionType.Health, TransactionType.Home, TransactionType.Hygiene, TransactionType.Other, TransactionType.Receipt, TransactionType.Rent, TransactionType.Sport, TransactionType.Study, TransactionType.Transport, TransactionType.Travel]

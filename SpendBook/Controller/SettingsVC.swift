@@ -17,7 +17,7 @@ class SettingsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        historyIconSwitch.isOn = UserSettings.instance.isHistoryIconEnable
+        historyIconSwitch.isOn = IconManager.instance.isIconEnable()
     }
     
     // Actions
@@ -25,6 +25,6 @@ class SettingsVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func isHistoryIconEnableChange(_ sender: Any) {
-        UserSettings.instance.isHistoryIconEnable = historyIconSwitch.isOn
+        IconManager.instance.setIconEnable(historyIconSwitch.isOn)
     }
 }
