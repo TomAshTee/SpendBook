@@ -12,7 +12,7 @@ import ChameleonFramework
 import CoreData
 import Hero
 
-class MainVC: UIViewController {
+class MainVC: UIViewController, HeroViewControllerDelegate {
 
     // Outlets
     
@@ -22,9 +22,6 @@ class MainVC: UIViewController {
     @IBOutlet weak var mountLbl: UILabel!
     @IBOutlet weak var addBtn: UIButton!
     @IBOutlet weak var withdrawBtn: UIButton!
-    
-    // Only for test te icon
-    var iconList = [TransactionType.Car, TransactionType.Cosmetic, TransactionType.Food, TransactionType.Game, TransactionType.Health, TransactionType.Home, TransactionType.Hygiene, TransactionType.Other, TransactionType.Receipt, TransactionType.Rent, TransactionType.Sport, TransactionType.Study, TransactionType.Transport, TransactionType.Travel]
     
     override func viewDidLoad() {
         super.viewDidLoad()

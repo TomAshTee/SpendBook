@@ -11,6 +11,7 @@
 		9060E83B795416E4C1F66C8A /* Pods_SpendBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF88BC616B3F4CA6DCBFD6E /* Pods_SpendBook.framework */; };
 		D600172E20323AD700DB4DD9 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D600172D20323AD700DB4DD9 /* UserSettings.swift */; };
 		D6050ED12033437500B50184 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6050ED02033437500B50184 /* Constant.swift */; };
+		D6050ED8203402FA00B50184 /* AddTransactionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6050ED7203402FA00B50184 /* AddTransactionVC.swift */; };
 		D62B97A7202F3E2A00E4FAD7 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62B97A6202F3E2A00E4FAD7 /* RoundedButton.swift */; };
 		D64F1D67202CD72300956B2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64F1D66202CD72300956B2B /* AppDelegate.swift */; };
 		D64F1D6C202CD72300956B2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D64F1D6A202CD72300956B2B /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		C7E02791FC84112687C8B5B8 /* Pods-SpendBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpendBookTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpendBookTests/Pods-SpendBookTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D600172D20323AD700DB4DD9 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		D6050ED02033437500B50184 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		D6050ED7203402FA00B50184 /* AddTransactionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionVC.swift; sourceTree = "<group>"; };
 		D62B97A6202F3E2A00E4FAD7 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		D64F1D63202CD72300956B2B /* SpendBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpendBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D64F1D66202CD72300956B2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				D6C4F5D920304B1D004DADF4 /* HistoryVC.swift */,
 				D6C4F5DB20304D91004DADF4 /* SavingsVC.swift */,
 				D6C4F5DD20304DA7004DADF4 /* AlarmVC.swift */,
+				D6050ED7203402FA00B50184 /* AddTransactionVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6050ED8203402FA00B50184 /* AddTransactionVC.swift in Sources */,
 				D6C4F5DA20304B1D004DADF4 /* HistoryVC.swift in Sources */,
 				D6C4F5DE20304DA7004DADF4 /* AlarmVC.swift in Sources */,
 				D64F1D6F202CD72300956B2B /* SpendBook.xcdatamodeld in Sources */,
