@@ -265,7 +265,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GkZ-DC-2K8">
                                 <rect key="frame" x="16" y="210" width="288" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nA4-ZD-eAk" customClass="RoundedButton" customModule="SpendBook" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="subBtn" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nA4-ZD-eAk" customClass="RoundedButton" customModule="SpendBook" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="134" height="40"/>
                                         <color key="backgroundColor" red="0.94509803921568625" green="0.36470588235294116" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="Icon-minus">
@@ -280,7 +280,7 @@
                                             <segue destination="pul-zJ-dUh" kind="show" id="KbW-af-YlV"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vc4-77-lnJ" customClass="RoundedButton" customModule="SpendBook" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="addBtn" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vc4-77-lnJ" customClass="RoundedButton" customModule="SpendBook" customModuleProvider="target">
                                         <rect key="frame" x="154" y="0.0" width="134" height="40"/>
                                         <color key="backgroundColor" red="0.23529411764705882" green="0.82745098039215681" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="Icon-plus">

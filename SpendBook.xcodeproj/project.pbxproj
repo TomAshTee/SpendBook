@@ -13,6 +13,7 @@
 		D6050ED12033437500B50184 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6050ED02033437500B50184 /* Constant.swift */; };
 		D6050ED8203402FA00B50184 /* AddTransactionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6050ED7203402FA00B50184 /* AddTransactionVC.swift */; };
 		D6050EDA2034AC9B00B50184 /* IconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6050ED92034AC9B00B50184 /* IconManager.swift */; };
+		D605902E20354C8F00A84047 /* TransactionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D605902D20354C8F00A84047 /* TransactionManager.swift */; };
 		D62B97A7202F3E2A00E4FAD7 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62B97A6202F3E2A00E4FAD7 /* RoundedButton.swift */; };
 		D64F1D67202CD72300956B2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64F1D66202CD72300956B2B /* AppDelegate.swift */; };
 		D64F1D6C202CD72300956B2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D64F1D6A202CD72300956B2B /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		D6050ED02033437500B50184 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		D6050ED7203402FA00B50184 /* AddTransactionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionVC.swift; sourceTree = "<group>"; };
 		D6050ED92034AC9B00B50184 /* IconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconManager.swift; sourceTree = "<group>"; };
+		D605902D20354C8F00A84047 /* TransactionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionManager.swift; sourceTree = "<group>"; };
 		D62B97A6202F3E2A00E4FAD7 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		D64F1D63202CD72300956B2B /* SpendBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpendBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D64F1D66202CD72300956B2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			children = (
 				D600172D20323AD700DB4DD9 /* UserSettings.swift */,
 				D6050ED92034AC9B00B50184 /* IconManager.swift */,
+				D605902D20354C8F00A84047 /* TransactionManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				D6050ED8203402FA00B50184 /* AddTransactionVC.swift in Sources */,
 				D6C4F5DA20304B1D004DADF4 /* HistoryVC.swift in Sources */,
 				D6C4F5DE20304DA7004DADF4 /* AlarmVC.swift in Sources */,
+				D605902E20354C8F00A84047 /* TransactionManager.swift in Sources */,
 				D64F1D6F202CD72300956B2B /* SpendBook.xcdatamodeld in Sources */,
 				D66937822031EBF90078228D /* AnimateTableView.swift in Sources */,
 				D600172E20323AD700DB4DD9 /* UserSettings.swift in Sources */,

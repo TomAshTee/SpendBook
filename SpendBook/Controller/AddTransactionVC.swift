@@ -19,6 +19,7 @@ class AddTransactionVC: UIViewController{
     var setTransactionBtn = UIButton()
     var textForDolarLbl = String()
     var colorForTransaction = UIColor()
+    var signOfTransaction = String()
     
     
     override func viewDidLoad() {
@@ -27,14 +28,7 @@ class AddTransactionVC: UIViewController{
         typePicker.dataSource = self
         typePicker.delegate = self
         
-        //Set color and Text
-        valueTextField.textColor = colorForTransaction
-        dolarLbl.textColor = colorForTransaction
-        dolarLbl.text = textForDolarLbl
-        
-        // Preselected type
-        typePicker.selectRow(0, inComponent: 0, animated: true)
-        valueTextField.placeholder = "Value of " + IconManager.instance.getIconList()[typePicker.selectedRow(inComponent: 0)]
+        updateView()
         
         // Set up keyboar Btn
         setTransactionBtn.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: 45)
@@ -44,8 +38,16 @@ class AddTransactionVC: UIViewController{
         valueTextField.inputAccessoryView = setTransactionBtn
         
     }
-
+    
+    
+    // Actions
+    @IBAction func backBtnPressed(_ sender: Any) {
+        dismissView()
+    }
+    
+    // Func
     @objc func setTransaction(){
+        
         if valueTextField.text != "" {
             self.save(completion: { (complete) in
                 if complete {
@@ -55,12 +57,16 @@ class AddTransactionVC: UIViewController{
         }
     }
     
-    // Actions
-    @IBAction func backBtnPressed(_ sender: Any) {
-        dismissView()
+    func updateView() {
+        //Set color and Text
+        valueTextField.textColor = colorForTransaction
+        dolarLbl.textColor = colorForTransaction
+        dolarLbl.text = textForDolarLbl
+        // Preselected type
+        typePicker.selectRow(0, inComponent: 0, animated: true)
+        valueTextField.placeholder = "Value of " + IconManager.instance.getIconList()[typePicker.selectedRow(inComponent: 0)]
     }
     
-    // Func
     func dismissView() {
         view.endEditing(true)
         dismiss(animated: true, completion: nil)
@@ -69,25 +75,32 @@ class AddTransactionVC: UIViewController{
     // Save to CoreData
     func save(completion: (_ finished: Bool)->()){
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        
+        var value: Int32 = 0
+        
+        //Remove ',' from textFiled. Detect 0 and 00 000 etc.
+        if let index = valueTextField.text?.range(of: ",")?.lowerBound {
+            if let string  = valueTextField.text?.prefix(upTo: index){
+                value = Int32(string)!
+            }
+        } else {
+            value = Int32((valueTextField.text)!)!
+        }
+        guard value != 0 else{
+            let alert = UIAlertController(title: "Hint", message: "The transaction value can not be 0.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
         let transaction = Transaction(context: managedContext)
         
         // Feel Entity
         transaction.type = IconManager.instance.getIconList()[typePicker.selectedRow(inComponent: 0)]
-        guard let value = Int32(valueTextField.text!) else {
-            print("Wrong value for Text Filed")
-            return
-        }
         transaction.value = value
-        let date = Date()
-        let calendar = Calendar.current
-        let formater = DateFormatter()
-        transaction.day = Int16(calendar.component(.day, from: date))
-        transaction.month = Int16(calendar.component(.month, from: date))
-        transaction.year = Int16(calendar.component(.year, from: date))
-        transaction.hour = Int16(calendar.component(.hour, from: date))
-        transaction.minute = Int16(calendar.component(.minute, from: date))
-        formater.dateFormat = "yyyy-MM-dd HH:mm"
-        transaction.data = formater.string(from: date)
+        transaction.sign = signOfTransaction
+        
+        TransactionManager.date(transaction)
         
         // Save
         do {

@@ -15,7 +15,7 @@ class TodayHistoryCell: UITableViewCell {
     @IBOutlet weak var transactionValueLbl: UILabel!
     @IBOutlet weak var typeImg: UIImageView!
     
-    func configureCell(type: String, transactionValue: Int){
+    func configureCell(type: String, transactionValue: Int, color: UIColor){
         
         if IconManager.instance.isIconEnable() {
             typeLbl.text = ""
@@ -25,7 +25,7 @@ class TodayHistoryCell: UITableViewCell {
             typeLbl.text = type
             typeImg.isHidden = true
         }
-        
+        self.transactionValueLbl.textColor = color
         self.transactionValueLbl.text = "$" + String(transactionValue)
     }
 
