@@ -156,7 +156,7 @@
                                     <constraint firstAttribute="height" constant="1" id="FF5-mX-gj6"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="04r-KC-UUQ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="04r-KC-UUQ">
                                 <rect key="frame" x="16" y="266" width="288" height="253"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -300,6 +300,12 @@
                                     <constraint firstAttribute="height" constant="40" id="4SM-u1-SS9"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No transactions today." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EvB-8I-UWu">
+                                <rect key="frame" x="16" y="258" width="288" height="261"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -325,14 +331,18 @@
                             <constraint firstItem="wUt-Or-qrn" firstAttribute="leading" secondItem="VjT-Cm-JGw" secondAttribute="leading" id="bnC-XL-FQ8"/>
                             <constraint firstItem="3Hm-Vw-sex" firstAttribute="top" secondItem="Tl0-Qk-43h" secondAttribute="bottom" constant="8" id="c8e-wI-hKv"/>
                             <constraint firstItem="IVw-8L-G7z" firstAttribute="leading" secondItem="VjT-Cm-JGw" secondAttribute="leading" constant="16" id="dIb-fU-T3T"/>
+                            <constraint firstItem="EvB-8I-UWu" firstAttribute="top" secondItem="GkZ-DC-2K8" secondAttribute="bottom" constant="8" id="dOP-IQ-GeJ"/>
+                            <constraint firstItem="EvB-8I-UWu" firstAttribute="leading" secondItem="VjT-Cm-JGw" secondAttribute="leading" constant="16" id="flP-ky-11t"/>
                             <constraint firstItem="20N-SP-6hw" firstAttribute="leading" secondItem="VjT-Cm-JGw" secondAttribute="leading" constant="16" id="g8j-Gf-z6o"/>
                             <constraint firstItem="Tl0-Qk-43h" firstAttribute="top" secondItem="RZa-6a-VGc" secondAttribute="bottom" constant="8" id="hkB-0N-Rpp"/>
                             <constraint firstItem="04r-KC-UUQ" firstAttribute="bottom" secondItem="VjT-Cm-JGw" secondAttribute="bottom" id="iMF-mW-fS0"/>
                             <constraint firstItem="cV4-Du-0Dm" firstAttribute="top" secondItem="s28-ef-yFg" secondAttribute="bottom" id="jSs-11-jMO"/>
                             <constraint firstItem="3Hm-Vw-sex" firstAttribute="trailing" secondItem="ZwE-0u-O6M" secondAttribute="trailingMargin" id="oxc-kg-xnd"/>
                             <constraint firstItem="RZa-6a-VGc" firstAttribute="trailing" secondItem="ZwE-0u-O6M" secondAttribute="trailingMargin" id="qL8-wY-n36"/>
+                            <constraint firstItem="EvB-8I-UWu" firstAttribute="bottom" secondItem="VjT-Cm-JGw" secondAttribute="bottom" id="see-ll-gCQ"/>
                             <constraint firstItem="RZa-6a-VGc" firstAttribute="top" secondItem="KhT-Tq-asg" secondAttribute="bottom" constant="8" id="xRe-Mn-k6D"/>
                             <constraint firstItem="GkZ-DC-2K8" firstAttribute="leading" secondItem="VjT-Cm-JGw" secondAttribute="leading" constant="16" id="yP5-ax-8eS"/>
+                            <constraint firstItem="VjT-Cm-JGw" firstAttribute="trailing" secondItem="EvB-8I-UWu" secondAttribute="trailing" constant="16" id="ybb-r1-wWr"/>
                             <constraint firstItem="XkG-oG-Nji" firstAttribute="leading" secondItem="VjT-Cm-JGw" secondAttribute="leading" constant="16" id="zem-5r-Jr8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VjT-Cm-JGw"/>
@@ -346,6 +356,7 @@
                         <outlet property="addBtn" destination="Vc4-77-lnJ" id="z3T-CK-Q60"/>
                         <outlet property="historyTableView" destination="04r-KC-UUQ" id="abo-aK-HNk"/>
                         <outlet property="mountLbl" destination="s28-ef-yFg" id="j30-9W-yng"/>
+                        <outlet property="noTransactionLbl" destination="EvB-8I-UWu" id="QX5-Nj-r1c"/>
                         <outlet property="summaryLbl" destination="Tl0-Qk-43h" id="tOt-Uu-emi"/>
                         <outlet property="todayLbl" destination="KhT-Tq-asg" id="r75-BS-65t"/>
                         <outlet property="withdrawBtn" destination="nA4-ZD-eAk" id="pnO-AL-FrH"/>
