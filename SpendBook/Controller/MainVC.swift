@@ -39,13 +39,17 @@ class MainVC: UIViewController, HeroViewControllerDelegate {
     func fetchCoreDataObjects () {
         self.fetch { (complete) in
             if complete {
-                if TransactionManager.instance.count() > 0{
+                if TransactionManager.instance.countToday() > 0{
                     historyTableView.isHidden = false
                     noTransactionLbl.isHidden = true
                 } else {
                     historyTableView.isHidden = true
                     noTransactionLbl.isHidden = false
                 }
+                upDateLblInfo()
+                //Debug
+                print("All transaction count: \(TransactionManager.instance.countAll())")
+                print("Today transaction count: \(TransactionManager.instance.countToday())")
             }
         }
     }
@@ -71,13 +75,13 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return TransactionManager.instance.count()
+        return TransactionManager.instance.countToday()
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = historyTableView.dequeueReusableCell(withIdentifier: "todayHistoryCell") as? TodayHistoryCell else {
             return UITableViewCell()
         }
-        let transaction = TransactionManager.instance.get((TransactionManager.instance.count() - 1) - indexPath.row)
+        let transaction = TransactionManager.instance.getToday((TransactionManager.instance.countToday() - 1) - indexPath.row)
        
         //cell.configureCell(type: value.type!, transactionValue: Int(value.value), color: colorOfTransaction)
         cell.configureCell(transaction: transaction)
@@ -103,11 +107,32 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-// Load data from CoreData
+
 extension MainVC {
+    
+    func upDateLblInfo() {
+        let monthly = TransactionManager.instance.getMonthlyValue()
+        let today = TransactionManager.instance.getTodayValue()
+        
+        if today >= 0 {
+            todayLbl.textColor = #colorLiteral(red: 0.2664798796, green: 0.8519781232, blue: 0.8082112074, alpha: 1)
+        } else {
+            todayLbl.textColor = #colorLiteral(red: 0.9647058824, green: 0.4666666667, blue: 0.6901960784, alpha: 1)
+        }
+        todayLbl.text = "$" + String(today)
+        
+        if monthly >= 0 {
+            mountLbl.textColor = #colorLiteral(red: 0.2664798796, green: 0.8519781232, blue: 0.8082112074, alpha: 1)
+        } else {
+            mountLbl.textColor = #colorLiteral(red: 0.9647058824, green: 0.4666666667, blue: 0.6901960784, alpha: 1)
+        }
+        mountLbl.text = "$" + String(monthly)
+    }
+    
+    // Remove data form CoreData
     func removeTransaction(atIndexPath indexPath: IndexPath){
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
-        managedContext.delete(TransactionManager.instance.get(indexPath.row))
+        managedContext.delete(TransactionManager.instance.getToday(indexPath.row))
         
         do {
             try managedContext.save()
@@ -117,6 +142,7 @@ extension MainVC {
         }
     }
     
+    // Load data from CoreData
     func fetch(completion: (_ complete: Bool) -> ()){
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Transaction")

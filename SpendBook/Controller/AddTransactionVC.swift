@@ -100,7 +100,7 @@ class AddTransactionVC: UIViewController{
         transaction.value = value
         transaction.sign = signOfTransaction
         
-        TransactionManager.date(transaction)
+        TransactionManager.todayDate(transaction)
         
         // Save
         do {

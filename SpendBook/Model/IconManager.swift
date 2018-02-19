@@ -17,9 +17,8 @@ class IconManager {
     }
     
     // Const (in future download form some list)
-    private let _iconList = ["Food", "Sport", "Home", "Study", "Game", "Travel", "Rent",
-                             "Receipt", "Health", "Hygiene", "Cosmetic", "Car", "Transport",
-                             "Other"]
+    private let _iconList = ["Car", "Cosmetic", "Food", "Game", "Health", "Home", "Hygiene", "Income",
+                             "Other", "Receipt", "Rent", "Sport", "Study", "Transport", "Travel" ]
     // Var
     private var _isIconEnable: Bool
     
