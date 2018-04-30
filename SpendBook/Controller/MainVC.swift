@@ -8,7 +8,6 @@
 
 import UIKit
 import Charts
-import ChameleonFramework
 import CoreData
 import Hero
 
@@ -98,7 +97,10 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "DELETE") { (rowAction, indexPath) in
             // Do this when press button DELETE
+        
             self.removeTransaction(atIndexPath: indexPath)
+            print("Delete indexPath: \(indexPath.row)")
+            print("Corect indexPath:\((TransactionManager.instance.countToday() - 1) - indexPath.row)")
             self.fetchCoreDataObjects()
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
@@ -132,7 +134,8 @@ extension MainVC {
     // Remove data form CoreData
     func removeTransaction(atIndexPath indexPath: IndexPath){
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
-        managedContext.delete(TransactionManager.instance.getToday(indexPath.row))
+        // Transaction list is reverse by the way it's display
+        managedContext.delete(TransactionManager.instance.getToday((TransactionManager.instance.countToday() - 1) - indexPath.row))
         
         do {
             try managedContext.save()

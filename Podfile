@@ -13,7 +13,7 @@ target 'SpendBook' do
   
   pod 'Hero', '~> 1.0'
   
-  pod 'ChameleonFramework', '~> 2.1'
+  # pod 'ChameleonFramework', '~> 2.1'
 
   target 'SpendBookTests' do
     inherit! :search_paths

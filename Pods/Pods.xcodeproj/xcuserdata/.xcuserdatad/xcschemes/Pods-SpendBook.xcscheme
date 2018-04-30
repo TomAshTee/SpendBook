@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'BD8313D8596AA6481FC854921B460E41'
+               BlueprintIdentifier = '1C51679AF5A8074690B20A7937C4CEDC'
                BlueprintName = 'Pods-SpendBook'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods-SpendBook.framework'>

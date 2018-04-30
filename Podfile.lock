@@ -1,22 +1,17 @@
 PODS:
-  - ChameleonFramework (2.1.0):
-    - ChameleonFramework/Default (= 2.1.0)
-  - ChameleonFramework/Default (2.1.0)
-  - Charts (3.0.4):
-    - Charts/Core (= 3.0.4)
-  - Charts/Core (3.0.4)
-  - Hero (1.0.1)
+  - Charts (3.1.1):
+    - Charts/Core (= 3.1.1)
+  - Charts/Core (3.1.1)
+  - Hero (1.2.0)
 
 DEPENDENCIES:
-  - ChameleonFramework (~> 2.1)
   - Charts (~> 3.0)
   - Hero (~> 1.0)
 
 SPEC CHECKSUMS:
-  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
-  Charts: 0705898046257443f0afbbc3179f4b67507b6e48
-  Hero: cee286821578e170d8c0c9c9cda7897357401112
+  Charts: 90a4d61da0f6e06684c591e3bcab11940fe61736
+  Hero: 33dadf2cd1c98af71e213dcbc2902e6e03622a4e
 
-PODFILE CHECKSUM: 2b97e128fd3e48624ab46d627fb0614491e37b1e
+PODFILE CHECKSUM: ded8cbb422ee26389884790e511a5cf407f48220
 
 COCOAPODS: 1.4.0
