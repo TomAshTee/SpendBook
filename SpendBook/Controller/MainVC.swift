@@ -35,6 +35,7 @@ class MainVC: UIViewController, HeroViewControllerDelegate {
         historyTableView.reloadData() 
     }
     
+    //  Reakcja UI na pobrane dane z CoreData
     func fetchCoreDataObjects () {
         self.fetch { (complete) in
             if complete {
@@ -99,8 +100,6 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
             // Do this when press button DELETE
         
             self.removeTransaction(atIndexPath: indexPath)
-            print("Delete indexPath: \(indexPath.row)")
-            print("Corect indexPath:\((TransactionManager.instance.countToday() - 1) - indexPath.row)")
             self.fetchCoreDataObjects()
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }

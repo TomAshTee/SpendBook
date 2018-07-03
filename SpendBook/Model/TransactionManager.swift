@@ -24,10 +24,12 @@ class TransactionManager {
         _calendar = Calendar.current
     }
     
-    // Public Func
+    // Public Func - przekazujemy wszystkie transakcje z CoreData
     public func setList(_ ofTransaction:[Transaction]){
         _transactionList = ofTransaction
     }
+    
+    // Pokazanie konkretnej tranzakcji z danego dnia
     public func getToday(_ transactionOfIndex: Int) -> Transaction {
         var today = [Transaction]()
         _updateTodayDate()
@@ -39,12 +41,16 @@ class TransactionManager {
         }
         return today[transactionOfIndex]
     }
+    
+    // Pobranie jednej transakcjie ze wszytkich dni
     public func getAll(_ trancsationOfIndex: Int) -> Transaction {
         return _transactionList[trancsationOfIndex]
     }
+    
+    // Wartość tranzakcji z aktualnego miesiąca
     public func getMonthlyValue() -> Int {
         var valueOfTransaction: Int32 = 0
-        for row in _transactionList {
+         for row in _transactionList {
             guard row.year == Int32(_calendar.component(.year, from: _date)) else {continue}
             guard row.month == Int32(_calendar.component(.month, from: _date)) else {continue}
             if row.sign == "+" {
@@ -55,6 +61,7 @@ class TransactionManager {
         }
         return Int(valueOfTransaction)
     }
+    
     public func getTodayValue() -> Int{
         var valueOfTransaction: Int32 = 0
         for row in _transactionList {
@@ -69,6 +76,8 @@ class TransactionManager {
         }
         return Int(valueOfTransaction)
     }
+    
+    // Zwraca ilość tranzakcji z aktualnego dnia
     public func countToday() -> Int {
         var amount: Int = 0
         
@@ -82,6 +91,7 @@ class TransactionManager {
         }
         return amount
     }
+    
     public func countAll() -> Int {
         return _transactionList.count
     }
