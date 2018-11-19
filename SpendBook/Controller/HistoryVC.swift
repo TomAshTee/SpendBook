@@ -10,8 +10,10 @@ import UIKit
 
 class HistoryVC: UIViewController {
 
-    @IBOutlet weak var inputTextFiled: UITextField!
+    @IBOutlet weak var fromTextFiled: UITextField!
+    @IBOutlet weak var toTextFiled: UITextField!
     
+    // Var for Date select
     private var datePicker: UIDatePicker!
     private let _date = Date()
     private let _curentCalenar = Calendar.current
@@ -21,6 +23,7 @@ class HistoryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Setup date select and gesture
         _dateFormatter.dateFormat = "dd-MM-yyyy"
         
         datePicker = UIDatePicker()
@@ -28,16 +31,25 @@ class HistoryVC: UIViewController {
         datePicker.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         datePicker.addTarget(self, action: #selector(HistoryVC.dateChanged(_:)), for: .valueChanged)
         
-        inputTextFiled.inputView = datePicker
-        setUpTodayDate(inputTextFiled)
+        fromTextFiled.inputView = datePicker
+        toTextFiled.inputView = datePicker
+        setUpTodayDate(fromTextFiled)
+        setUpTodayDate(toTextFiled)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(HistoryVC.viewTaped(_:)))
         view.addGestureRecognizer(tapGesture)
     }
-    
+
+}
+
+extension HistoryVC {
     @objc func dateChanged(_ datePicker: UIDatePicker){
-        
-        inputTextFiled.text = _dateFormatter.string(from: datePicker.date)
+        if fromTextFiled.isEditing {
+            fromTextFiled.text = _dateFormatter.string(from: datePicker.date)
+        }
+        if toTextFiled.isEditing {
+            toTextFiled.text = _dateFormatter.string(from: datePicker.date)
+        }
     }
     
     @objc func viewTaped(_ gestureRecognizer: UITapGestureRecognizer){
@@ -47,5 +59,4 @@ class HistoryVC: UIViewController {
     func setUpTodayDate(_ textField: UITextField){
         textField.text = _dateFormatter.string(from: _date)
     }
-
 }
