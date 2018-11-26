@@ -43,12 +43,38 @@ class HistoryVC: UIViewController {
 }
 
 extension HistoryVC {
+    
+    
     @objc func dateChanged(_ datePicker: UIDatePicker){
+    
+        
         if fromTextFiled.isEditing {
             fromTextFiled.text = _dateFormatter.string(from: datePicker.date)
         }
         if toTextFiled.isEditing {
             toTextFiled.text = _dateFormatter.string(from: datePicker.date)
+        }
+        
+        // Check is there any value
+        guard let dateFromTF = fromTextFiled.text else {
+            print("Date in fromTextField is nil")
+            return
+        }
+        guard let dateToTF = toTextFiled.text else {
+            print("Date in toTextFiled is nil")
+            return
+        }
+        
+        // If date "to" is smaller then "from"
+        guard _dateFormatter.date(from: dateToTF)! >= _dateFormatter.date(from: dateFromTF)! else {
+            let alert = UIAlertController(title: "Hint", message: "\"To\" date cannot be smaller then \"From\"", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+            datePicker.setDate(_dateFormatter.date(from: dateFromTF)!, animated: true)
+            toTextFiled.text = fromTextFiled.text
+            
+            return
         }
     }
     
