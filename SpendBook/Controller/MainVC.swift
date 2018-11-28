@@ -114,6 +114,7 @@ extension MainVC {
     func upDateLblInfo() {
         let monthly = TransactionManager.instance.getMonthlyValue()
         let today = TransactionManager.instance.getTodayValue()
+        let summary = TransactionManager.instance.getSummaryValue()
         
         if today >= 0 {
             todayLbl.textColor = #colorLiteral(red: 0.2664798796, green: 0.8519781232, blue: 0.8082112074, alpha: 1)
@@ -128,6 +129,13 @@ extension MainVC {
             mountLbl.textColor = #colorLiteral(red: 0.9647058824, green: 0.4666666667, blue: 0.6901960784, alpha: 1)
         }
         mountLbl.text = "$" + String(monthly)
+        
+        if summary >= 0 {
+            summaryLbl.textColor = #colorLiteral(red: 0.2664798796, green: 0.8519781232, blue: 0.8082112074, alpha: 1)
+        } else {
+            summaryLbl.textColor = #colorLiteral(red: 0.9752412438, green: 0.447863102, blue: 0.6472212672, alpha: 1)
+        }
+        summaryLbl.text = "$" + String(summary)
     }
     
     // Remove data form CoreData

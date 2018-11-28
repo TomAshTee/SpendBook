@@ -47,31 +47,46 @@ class TransactionManager {
         return _transactionList[trancsationOfIndex]
     }
     
-    // Wartość tranzakcji z aktualnego miesiąca
-    public func getMonthlyValue() -> Int {
+    //Wartość transakcji ze wszystkich dni
+    public func getSummaryValue() -> Int {
         var valueOfTransaction: Int32 = 0
-         for row in _transactionList {
-            guard row.year == Int32(_calendar.component(.year, from: _date)) else {continue}
-            guard row.month == Int32(_calendar.component(.month, from: _date)) else {continue}
-            if row.sign == "+" {
-                valueOfTransaction += row.value
-            } else if row.sign == "-" {
-                valueOfTransaction -= row.value
+        for transaction in _transactionList {
+            if transaction.sign == "+" {
+                valueOfTransaction += transaction.value
+            }
+            if transaction.sign == "-" {
+                valueOfTransaction -= transaction.value
             }
         }
         return Int(valueOfTransaction)
     }
     
+    // Wartość tranzakcji z aktualnego miesiąca
+    public func getMonthlyValue() -> Int {
+        var valueOfTransaction: Int32 = 0
+         for transaction in _transactionList {
+            guard transaction.year == Int32(_calendar.component(.year, from: _date)) else {continue}
+            guard transaction.month == Int32(_calendar.component(.month, from: _date)) else {continue}
+            if transaction.sign == "+" {
+                valueOfTransaction += transaction.value
+            } else if transaction.sign == "-" {
+                valueOfTransaction -= transaction.value
+            }
+        }
+        return Int(valueOfTransaction)
+    }
+    
+    // Wartość transakcji z danego dnia
     public func getTodayValue() -> Int{
         var valueOfTransaction: Int32 = 0
-        for row in _transactionList {
-            guard row.year == Int32(_calendar.component(.year, from: _date)) else {continue}
-            guard row.month == Int32(_calendar.component(.month, from: _date)) else {continue}
-            guard row.day == Int32(_calendar.component(.day, from: _date)) else {continue}
-            if row.sign == "+" {
-                valueOfTransaction += row.value
-            } else if row.sign == "-" {
-                valueOfTransaction -= row.value
+        for transaction in _transactionList {
+            guard transaction.year == Int32(_calendar.component(.year, from: _date)) else {continue}
+            guard transaction.month == Int32(_calendar.component(.month, from: _date)) else {continue}
+            guard transaction.day == Int32(_calendar.component(.day, from: _date)) else {continue}
+            if transaction.sign == "+" {
+                valueOfTransaction += transaction.value
+            } else if transaction.sign == "-" {
+                valueOfTransaction -= transaction.value
             }
         }
         return Int(valueOfTransaction)
