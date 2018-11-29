@@ -12,6 +12,8 @@ class HistoryVC: UIViewController {
 
     @IBOutlet weak var fromTextFiled: UITextField!
     @IBOutlet weak var toTextFiled: UITextField!
+    @IBOutlet weak var historyTableView: UITableView!
+    @IBOutlet weak var summaryLbl: UILabel!
     
     // Var for Date select
     private var datePicker: UIDatePicker!
@@ -22,6 +24,9 @@ class HistoryVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.historyTableView.dataSource = self
+        self.historyTableView.delegate = self
         
         //Setup date select and gesture
         _dateFormatter.dateFormat = "dd-MM-yyyy"
@@ -39,11 +44,53 @@ class HistoryVC: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(HistoryVC.viewTaped(_:)))
         view.addGestureRecognizer(tapGesture)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        historyTableView.reloadData()
+        self.updateSummaryLbl()
+    }
 
+}
+
+extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return TransactionManager.instance.getTransaction(_dateFormatter.date(from: fromTextFiled.text!)!, _dateFormatter.date(from: toTextFiled.text!)!).count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = historyTableView.dequeueReusableCell(withIdentifier: "historyCell") as? HistoryCell else {
+            return UITableViewCell()
+        }
+        cell.configureCell(TransactionManager.instance.getTransaction(_dateFormatter.date(from: fromTextFiled.text!)!, _dateFormatter.date(from: toTextFiled.text!)!)[indexPath.row])
+        return cell
+    }
 }
 
 extension HistoryVC {
     
+    func updateSummaryLbl() {
+        let transactionList = TransactionManager.instance.getTransaction(_dateFormatter.date(from: fromTextFiled.text!)!, _dateFormatter.date(from: toTextFiled.text!)!)
+        var summaryValue: Int32 = 0
+        
+        for row in transactionList {
+            if row.sign == "-"{
+                summaryValue -= row.value
+            }
+            if row.sign == "+"{
+                summaryValue += row.value
+            }
+        }
+        
+        if summaryValue >= 0 {
+            summaryLbl.textColor = #colorLiteral(red: 0.2664798796, green: 0.8519781232, blue: 0.8082112074, alpha: 1)
+        } else {
+            summaryLbl.textColor = #colorLiteral(red: 0.9647058824, green: 0.4666666667, blue: 0.6901960784, alpha: 1)
+        }
+        
+        summaryLbl.text = "$" + String(summaryValue)
+    }
     
     @objc func dateChanged(_ datePicker: UIDatePicker){
     
@@ -76,16 +123,13 @@ extension HistoryVC {
             
             return
         }
-        
-        guard let listOfTransaction: [Transaction] = TransactionManager.instance.getTransaction(_dateFormatter.date(from: dateFromTF)!, _dateFormatter.date(from: dateToTF)!) else {
-            print("Some error in TransactionManager...getTransaction.")
-            return
-        }
-        
-        print("List of transaction in period of time: \(listOfTransaction.count)")
+        self.historyTableView.reloadData()
+        self.updateSummaryLbl()
     }
     
     @objc func viewTaped(_ gestureRecognizer: UITapGestureRecognizer){
+        self.historyTableView.reloadData()
+        self.updateSummaryLbl()
         view.endEditing(true)
     }
     

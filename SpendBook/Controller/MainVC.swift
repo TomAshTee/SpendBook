@@ -82,8 +82,6 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         let transaction = TransactionManager.instance.getToday((TransactionManager.instance.countToday() - 1) - indexPath.row)
-       
-        //cell.configureCell(type: value.type!, transactionValue: Int(value.value), color: colorOfTransaction)
         cell.configureCell(transaction: transaction)
         return cell
     }

@@ -29,6 +29,7 @@
 		D6C4F5DC20304D91004DADF4 /* SavingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5DB20304D91004DADF4 /* SavingsVC.swift */; };
 		D6C4F5DE20304DA7004DADF4 /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5DD20304DA7004DADF4 /* AlarmVC.swift */; };
 		D6C4F5E020305A3D004DADF4 /* TodayHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5DF20305A3D004DADF4 /* TodayHistoryCell.swift */; };
+		D6D5AC9221B0863700C07F3E /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D5AC9121B0863700C07F3E /* HistoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		D6C4F5DB20304D91004DADF4 /* SavingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsVC.swift; sourceTree = "<group>"; };
 		D6C4F5DD20304DA7004DADF4 /* AlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmVC.swift; sourceTree = "<group>"; };
 		D6C4F5DF20305A3D004DADF4 /* TodayHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHistoryCell.swift; sourceTree = "<group>"; };
+		D6D5AC9121B0863700C07F3E /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,9 +176,10 @@
 		D64F1DAA202E0C8E00956B2B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D6C4F5DF20305A3D004DADF4 /* TodayHistoryCell.swift */,
+				D6D5AC9121B0863700C07F3E /* HistoryCell.swift */,
 				D62B97A6202F3E2A00E4FAD7 /* RoundedButton.swift */,
 				D6C4F5D5202F4A40004DADF4 /* GradientLayer.swift */,
-				D6C4F5DF20305A3D004DADF4 /* TodayHistoryCell.swift */,
 				D66937812031EBF90078228D /* AnimateTableView.swift */,
 			);
 			path = View;
@@ -429,6 +432,7 @@
 				D6C4F5DE20304DA7004DADF4 /* AlarmVC.swift in Sources */,
 				D605902E20354C8F00A84047 /* TransactionManager.swift in Sources */,
 				D64F1D6F202CD72300956B2B /* SpendBook.xcdatamodeld in Sources */,
+				D6D5AC9221B0863700C07F3E /* HistoryCell.swift in Sources */,
 				D66937822031EBF90078228D /* AnimateTableView.swift in Sources */,
 				D600172E20323AD700DB4DD9 /* UserSettings.swift in Sources */,
 				D6C4F5D6202F4A40004DADF4 /* GradientLayer.swift in Sources */,
