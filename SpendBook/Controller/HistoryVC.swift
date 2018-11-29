@@ -76,6 +76,13 @@ extension HistoryVC {
             
             return
         }
+        
+        guard let listOfTransaction: [Transaction] = TransactionManager.instance.getTransaction(_dateFormatter.date(from: dateFromTF)!, _dateFormatter.date(from: dateToTF)!) else {
+            print("Some error in TransactionManager...getTransaction.")
+            return
+        }
+        
+        print("List of transaction in period of time: \(listOfTransaction.count)")
     }
     
     @objc func viewTaped(_ gestureRecognizer: UITapGestureRecognizer){
