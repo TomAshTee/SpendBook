@@ -206,6 +206,13 @@
                                 <color key="textColor" red="0.23529411759999999" green="0.82745098039999998" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No transactions during this period of time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwh-on-rpr">
+                                <rect key="frame" x="16" y="159" width="288" height="322"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -244,6 +251,7 @@
                     <connections>
                         <outlet property="fromTextFiled" destination="CkT-qP-wjK" id="jOP-oD-DVS"/>
                         <outlet property="historyTableView" destination="K0E-E9-i5i" id="eWi-sJ-LfH"/>
+                        <outlet property="noTransactionLbl" destination="Rwh-on-rpr" id="aeE-ec-uIP"/>
                         <outlet property="summaryLbl" destination="bZL-uD-HG9" id="wG1-uy-6Ss"/>
                         <outlet property="toTextFiled" destination="Ess-hD-cld" id="xRG-wk-7Do"/>
                     </connections>

@@ -14,6 +14,7 @@ class HistoryVC: UIViewController {
     @IBOutlet weak var toTextFiled: UITextField!
     @IBOutlet weak var historyTableView: UITableView!
     @IBOutlet weak var summaryLbl: UILabel!
+    @IBOutlet weak var noTransactionLbl: UILabel!
     
     // Var for Date select
     private var datePicker: UIDatePicker!
@@ -27,6 +28,7 @@ class HistoryVC: UIViewController {
         
         self.historyTableView.dataSource = self
         self.historyTableView.delegate = self
+        self.historyTableView.isHidden = false
         
         //Setup date select and gesture
         _dateFormatter.dateFormat = "dd-MM-yyyy"
@@ -57,7 +59,17 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return TransactionManager.instance.getTransaction(_dateFormatter.date(from: fromTextFiled.text!)!, _dateFormatter.date(from: toTextFiled.text!)!).count
+        let numberOfRows = TransactionManager.instance.getTransaction(_dateFormatter.date(from: fromTextFiled.text!)!, _dateFormatter.date(from: toTextFiled.text!)!).count
+        
+        if numberOfRows == 0 {
+            self.historyTableView.isHidden = true
+            self.noTransactionLbl.isHidden = false
+        } else {
+            self.historyTableView.isHidden = false
+            self.noTransactionLbl.isHidden = true
+        }
+        
+        return numberOfRows
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = historyTableView.dequeueReusableCell(withIdentifier: "historyCell") as? HistoryCell else {
