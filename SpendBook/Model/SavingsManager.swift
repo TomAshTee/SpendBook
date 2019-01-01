@@ -23,4 +23,21 @@ class SavingsManager {
     public func countSavings() -> Int {
         return _savingsList.count
     }
+    
+    public func getSummaryOfSavings() -> Int {
+        var summaryOfSavings: Int32 = 0
+        for saving in _savingsList {
+            summaryOfSavings += saving.value
+        }
+        return Int(summaryOfSavings)
+    }
+    
+    public func todayDate(_ forSaving: Savings){
+        let date = Date()
+        let formater = DateFormatter()
+        
+        formater.dateFormat = "yyyy-MM-dd HH:mm"
+        forSaving.date = formater.string(from: date)
+    }
+    
 }
