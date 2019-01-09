@@ -39,5 +39,4 @@ class SavingsManager {
         formater.dateFormat = "yyyy-MM-dd HH:mm"
         forSaving.date = formater.string(from: date)
     }
-    
 }
