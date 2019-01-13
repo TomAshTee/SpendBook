@@ -118,7 +118,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$69" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BqX-jf-KkG">
-                                                    <rect key="frame" x="243" y="0.0" width="100" height="50"/>
+                                                    <rect key="frame" x="188" y="0.0" width="100" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="5El-bS-fou"/>
                                                         <constraint firstAttribute="height" constant="50" id="9G8-NS-ubB"/>
@@ -344,10 +344,13 @@
                                     <constraint firstAttribute="height" constant="1" id="jug-8n-VV6"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="addBtn" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8QG-Mf-WVM" customClass="RoundedButton" customModule="SpendBook" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="addBtn" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8QG-Mf-WVM" customClass="RoundedGradientButton" customModule="SpendBook" customModuleProvider="target">
                                 <rect key="frame" x="16" y="132" width="288" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.45064783096313477" green="0.83932691812515259" blue="0.80395382642745972" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="RLF-hZ-hTW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="26"/>
                                 <state key="normal" title="Manage">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -355,11 +358,24 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topGradientColor">
+                                        <color key="value" red="0.90980392160000001" green="0.47843137250000001" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomGradientColor">
+                                        <color key="value" red="0.49803921569999998" green="0.90029709589999996" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zLG-0j-Hx2">
+                                <rect key="frame" x="16" y="180" width="288" height="339"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="zLG-0j-Hx2" firstAttribute="top" secondItem="8QG-Mf-WVM" secondAttribute="bottom" constant="8" id="2QE-l9-W3s"/>
+                            <constraint firstItem="LjR-Ai-cdV" firstAttribute="trailing" secondItem="8QG-Mf-WVM" secondAttribute="trailing" constant="16" id="4QR-dv-yIT"/>
+                            <constraint firstItem="8QG-Mf-WVM" firstAttribute="top" secondItem="hwP-XO-ks2" secondAttribute="bottom" constant="8" id="72V-j8-ZdN"/>
                             <constraint firstItem="QmA-0M-6qm" firstAttribute="trailing" secondItem="LjR-Ai-cdV" secondAttribute="trailing" id="7Pz-XV-zhy"/>
                             <constraint firstItem="qdD-k5-rpw" firstAttribute="top" secondItem="QmA-0M-6qm" secondAttribute="bottom" constant="8" id="9lu-2x-kyG"/>
                             <constraint firstItem="QmA-0M-6qm" firstAttribute="top" secondItem="fjH-af-OaA" secondAttribute="top" id="Bd7-WN-eW5"/>
@@ -367,7 +383,13 @@
                             <constraint firstItem="eYr-XC-9nA" firstAttribute="top" secondItem="QmA-0M-6qm" secondAttribute="bottom" constant="8" id="HRb-TC-i3C"/>
                             <constraint firstItem="QmA-0M-6qm" firstAttribute="leading" secondItem="LjR-Ai-cdV" secondAttribute="leading" id="IjZ-Sx-KRy"/>
                             <constraint firstItem="LjR-Ai-cdV" firstAttribute="trailing" secondItem="eYr-XC-9nA" secondAttribute="trailing" constant="16" id="ODM-il-Cft"/>
+                            <constraint firstItem="zLG-0j-Hx2" firstAttribute="top" secondItem="8QG-Mf-WVM" secondAttribute="bottom" constant="8" id="PFS-lY-j9q"/>
+                            <constraint firstItem="zLG-0j-Hx2" firstAttribute="leading" secondItem="LjR-Ai-cdV" secondAttribute="leading" constant="16" id="cE4-m6-EEw"/>
+                            <constraint firstItem="zLG-0j-Hx2" firstAttribute="centerX" secondItem="fjH-af-OaA" secondAttribute="centerX" id="m4G-on-OL1"/>
+                            <constraint firstItem="8QG-Mf-WVM" firstAttribute="leading" secondItem="LjR-Ai-cdV" secondAttribute="leading" constant="16" id="mOu-iN-hhJ"/>
+                            <constraint firstItem="LjR-Ai-cdV" firstAttribute="trailing" secondItem="zLG-0j-Hx2" secondAttribute="trailing" constant="16" id="tB5-hl-GFg"/>
                             <constraint firstItem="hwP-XO-ks2" firstAttribute="top" secondItem="eYr-XC-9nA" secondAttribute="bottom" id="uC7-v5-Cac"/>
+                            <constraint firstItem="zLG-0j-Hx2" firstAttribute="bottom" secondItem="LjR-Ai-cdV" secondAttribute="bottom" id="zS2-gd-n9v"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LjR-Ai-cdV"/>
                     </view>
@@ -380,6 +402,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="manageBtn" destination="8QG-Mf-WVM" id="BdY-6x-jkh"/>
+                        <outlet property="savingsLbl" destination="eYr-XC-9nA" id="qUx-EX-atz"/>
+                        <outlet property="savingsTableView" destination="zLG-0j-Hx2" id="RQ3-Oq-fdc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jrr-Ph-Z7r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -591,7 +618,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GkZ-DC-2K8">
                                 <rect key="frame" x="16" y="210" width="288" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="subBtn" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nA4-ZD-eAk" customClass="RoundedButton" customModule="SpendBook" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="subBtn" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nA4-ZD-eAk" customClass="RoundedGradientButton" customModule="SpendBook" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="134" height="40"/>
                                         <color key="backgroundColor" red="0.94509803921568625" green="0.36470588235294116" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="Icon-minus">
@@ -606,7 +633,7 @@
                                             <segue destination="pul-zJ-dUh" kind="show" id="KbW-af-YlV"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="addBtn" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vc4-77-lnJ" customClass="RoundedButton" customModule="SpendBook" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="addBtn" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vc4-77-lnJ" customClass="RoundedGradientButton" customModule="SpendBook" customModuleProvider="target">
                                         <rect key="frame" x="154" y="0.0" width="134" height="40"/>
                                         <color key="backgroundColor" red="0.23529411764705882" green="0.82745098039215681" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="Icon-plus">

@@ -14,7 +14,7 @@
 		D6050ED8203402FA00B50184 /* AddTransactionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6050ED7203402FA00B50184 /* AddTransactionVC.swift */; };
 		D6050EDA2034AC9B00B50184 /* IconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6050ED92034AC9B00B50184 /* IconManager.swift */; };
 		D605902E20354C8F00A84047 /* TransactionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D605902D20354C8F00A84047 /* TransactionManager.swift */; };
-		D62B97A7202F3E2A00E4FAD7 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62B97A6202F3E2A00E4FAD7 /* RoundedButton.swift */; };
+		D62B97A7202F3E2A00E4FAD7 /* RoundedGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62B97A6202F3E2A00E4FAD7 /* RoundedGradientButton.swift */; };
 		D64F1D67202CD72300956B2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64F1D66202CD72300956B2B /* AppDelegate.swift */; };
 		D64F1D6C202CD72300956B2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D64F1D6A202CD72300956B2B /* Main.storyboard */; };
 		D64F1D6F202CD72300956B2B /* SpendBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D64F1D6D202CD72300956B2B /* SpendBook.xcdatamodeld */; };
@@ -55,7 +55,7 @@
 		D6050ED7203402FA00B50184 /* AddTransactionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionVC.swift; sourceTree = "<group>"; };
 		D6050ED92034AC9B00B50184 /* IconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconManager.swift; sourceTree = "<group>"; };
 		D605902D20354C8F00A84047 /* TransactionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionManager.swift; sourceTree = "<group>"; };
-		D62B97A6202F3E2A00E4FAD7 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		D62B97A6202F3E2A00E4FAD7 /* RoundedGradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedGradientButton.swift; sourceTree = "<group>"; };
 		D64F1D63202CD72300956B2B /* SpendBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpendBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D64F1D66202CD72300956B2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D64F1D6B202CD72300956B2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -181,7 +181,7 @@
 			children = (
 				D6C4F5DF20305A3D004DADF4 /* TodayHistoryCell.swift */,
 				D6D5AC9121B0863700C07F3E /* HistoryCell.swift */,
-				D62B97A6202F3E2A00E4FAD7 /* RoundedButton.swift */,
+				D62B97A6202F3E2A00E4FAD7 /* RoundedGradientButton.swift */,
 				D6C4F5D5202F4A40004DADF4 /* GradientLayer.swift */,
 				D66937812031EBF90078228D /* AnimateTableView.swift */,
 			);
@@ -443,7 +443,7 @@
 				D6050ED12033437500B50184 /* Constant.swift in Sources */,
 				D64F1DAE202E0CC000956B2B /* MainVC.swift in Sources */,
 				D64F1D67202CD72300956B2B /* AppDelegate.swift in Sources */,
-				D62B97A7202F3E2A00E4FAD7 /* RoundedButton.swift in Sources */,
+				D62B97A7202F3E2A00E4FAD7 /* RoundedGradientButton.swift in Sources */,
 				D6C4F5DC20304D91004DADF4 /* SavingsVC.swift in Sources */,
 				D6C4F5E020305A3D004DADF4 /* TodayHistoryCell.swift in Sources */,
 				D6C4F5D820304A8A004DADF4 /* SettingsVC.swift in Sources */,
