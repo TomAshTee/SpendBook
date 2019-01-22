@@ -35,25 +35,6 @@ class MainVC: UIViewController, HeroViewControllerDelegate {
         historyTableView.reloadData() 
     }
     
-    //  Reakcja UI na pobrane dane z CoreData
-    func fetchCoreDataObjects () {
-        self.fetch { (complete) in
-            if complete {
-                if TransactionManager.instance.countToday() > 0{
-                    historyTableView.isHidden = false
-                    noTransactionLbl.isHidden = true
-                } else {
-                    historyTableView.isHidden = true
-                    noTransactionLbl.isHidden = false
-                }
-                upDateLblInfo()
-                //Debug
-                print("All transaction count: \(TransactionManager.instance.countAll())")
-                print("Today transaction count: \(TransactionManager.instance.countToday())")
-            }
-        }
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // What kind of transaction it is ?
         if let viewController = segue.destination as? AddTransactionVC, let sender = sender as? UIButton {
@@ -108,6 +89,25 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
 
 
 extension MainVC {
+    
+    //  Reakcja UI na pobrane dane z CoreData
+    func fetchCoreDataObjects () {
+        self.fetch { (complete) in
+            if complete {
+                if TransactionManager.instance.countToday() > 0{
+                    historyTableView.isHidden = false
+                    noTransactionLbl.isHidden = true
+                } else {
+                    historyTableView.isHidden = true
+                    noTransactionLbl.isHidden = false
+                }
+                upDateLblInfo()
+                //Debug
+                print("All transaction count: \(TransactionManager.instance.countAll())")
+                print("Today transaction count: \(TransactionManager.instance.countToday())")
+            }
+        }
+    }
     
     func upDateLblInfo() {
         let monthly = TransactionManager.instance.getMonthlyValue()

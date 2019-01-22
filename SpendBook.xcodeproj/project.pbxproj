@@ -27,7 +27,7 @@
 		D6C4F5D820304A8A004DADF4 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5D720304A8A004DADF4 /* SettingsVC.swift */; };
 		D6C4F5DA20304B1D004DADF4 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5D920304B1D004DADF4 /* HistoryVC.swift */; };
 		D6C4F5DC20304D91004DADF4 /* SavingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5DB20304D91004DADF4 /* SavingsVC.swift */; };
-		D6C4F5DE20304DA7004DADF4 /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5DD20304DA7004DADF4 /* AlarmVC.swift */; };
+		D6C4F5DE20304DA7004DADF4 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5DD20304DA7004DADF4 /* AccountVC.swift */; };
 		D6C4F5E020305A3D004DADF4 /* TodayHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5DF20305A3D004DADF4 /* TodayHistoryCell.swift */; };
 		D6D5AC9221B0863700C07F3E /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D5AC9121B0863700C07F3E /* HistoryCell.swift */; };
 		D6ED1DC721CEB19700459EEB /* SavingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ED1DC621CEB19700459EEB /* SavingsManager.swift */; };
@@ -72,7 +72,7 @@
 		D6C4F5D720304A8A004DADF4 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		D6C4F5D920304B1D004DADF4 /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 		D6C4F5DB20304D91004DADF4 /* SavingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsVC.swift; sourceTree = "<group>"; };
-		D6C4F5DD20304DA7004DADF4 /* AlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmVC.swift; sourceTree = "<group>"; };
+		D6C4F5DD20304DA7004DADF4 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		D6C4F5DF20305A3D004DADF4 /* TodayHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHistoryCell.swift; sourceTree = "<group>"; };
 		D6D5AC9121B0863700C07F3E /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		D6ED1DC621CEB19700459EEB /* SavingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsManager.swift; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 				D6C4F5D720304A8A004DADF4 /* SettingsVC.swift */,
 				D6C4F5D920304B1D004DADF4 /* HistoryVC.swift */,
 				D6C4F5DB20304D91004DADF4 /* SavingsVC.swift */,
-				D6C4F5DD20304DA7004DADF4 /* AlarmVC.swift */,
+				D6C4F5DD20304DA7004DADF4 /* AccountVC.swift */,
 				D6050ED7203402FA00B50184 /* AddTransactionVC.swift */,
 			);
 			path = Controller;
@@ -433,7 +433,7 @@
 				D6ED1DC721CEB19700459EEB /* SavingsManager.swift in Sources */,
 				D6050ED8203402FA00B50184 /* AddTransactionVC.swift in Sources */,
 				D6C4F5DA20304B1D004DADF4 /* HistoryVC.swift in Sources */,
-				D6C4F5DE20304DA7004DADF4 /* AlarmVC.swift in Sources */,
+				D6C4F5DE20304DA7004DADF4 /* AccountVC.swift in Sources */,
 				D605902E20354C8F00A84047 /* TransactionManager.swift in Sources */,
 				D64F1D6F202CD72300956B2B /* SpendBook.xcdatamodeld in Sources */,
 				D6D5AC9221B0863700C07F3E /* HistoryCell.swift in Sources */,

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18C54" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Savings" representedClassName="Savings" syncable="YES" codeGenerationType="class">
+    <entity name="Saving" representedClassName="Saving" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="goal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="operations" optional="YES" attributeType="Transformable" customClassName="[String]" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <entity name="Transaction" representedClassName="Transaction" syncable="YES" codeGenerationType="class">
@@ -17,7 +18,7 @@
         <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Saving" positionX="160" positionY="192" width="128" height="105"/>
         <element name="Transaction" positionX="-63" positionY="-18" width="128" height="180"/>
-        <element name="Savings" positionX="-63" positionY="54" width="128" height="90"/>
     </elements>
 </model>
