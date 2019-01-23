@@ -352,15 +352,15 @@
                                     <segue destination="W2d-pa-GmO" kind="show" id="TT8-kN-ehX"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zLG-0j-Hx2">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zLG-0j-Hx2">
                                 <rect key="frame" x="16" y="180" width="288" height="339"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="tg4-0s-LRH">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="savingsCell" id="tg4-0s-LRH" customClass="SavingsCell" customModule="SpendBook" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="288" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tg4-0s-LRH" id="Pw7-Sd-77G">
-                                            <rect key="frame" x="0.0" y="0.0" width="288" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BuO-SK-eaw">
@@ -387,6 +387,10 @@
                                                 <constraint firstItem="BuO-SK-eaw" firstAttribute="leading" secondItem="Pw7-Sd-77G" secondAttribute="leadingMargin" id="zYK-xq-yvP"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="accountNameLbl" destination="xaA-rx-WlP" id="5jf-mX-E6f"/>
+                                            <outlet property="valueLbl" destination="oyS-eL-cGj" id="maL-C5-zQ9"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

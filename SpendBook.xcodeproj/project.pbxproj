@@ -31,6 +31,7 @@
 		D6C4F5E020305A3D004DADF4 /* TodayHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5DF20305A3D004DADF4 /* TodayHistoryCell.swift */; };
 		D6D5AC9221B0863700C07F3E /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D5AC9121B0863700C07F3E /* HistoryCell.swift */; };
 		D6ED1DC721CEB19700459EEB /* SavingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ED1DC621CEB19700459EEB /* SavingsManager.swift */; };
+		D6F377FB21F87E3E00123C7E /* SavingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F377FA21F87E3E00123C7E /* SavingsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		D6C4F5DF20305A3D004DADF4 /* TodayHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHistoryCell.swift; sourceTree = "<group>"; };
 		D6D5AC9121B0863700C07F3E /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		D6ED1DC621CEB19700459EEB /* SavingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsManager.swift; sourceTree = "<group>"; };
+		D6F377FA21F87E3E00123C7E /* SavingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				D6C4F5DF20305A3D004DADF4 /* TodayHistoryCell.swift */,
+				D6F377FA21F87E3E00123C7E /* SavingsCell.swift */,
 				D6D5AC9121B0863700C07F3E /* HistoryCell.swift */,
 				D62B97A6202F3E2A00E4FAD7 /* RoundedGradientButton.swift */,
 				D6C4F5D5202F4A40004DADF4 /* GradientLayer.swift */,
@@ -429,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6F377FB21F87E3E00123C7E /* SavingsCell.swift in Sources */,
 				D6050EDA2034AC9B00B50184 /* IconManager.swift in Sources */,
 				D6ED1DC721CEB19700459EEB /* SavingsManager.swift in Sources */,
 				D6050ED8203402FA00B50184 /* AddTransactionVC.swift in Sources */,

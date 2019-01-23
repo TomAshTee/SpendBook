@@ -49,7 +49,13 @@ class AccountVC: UIViewController {
                 }
             }, accountName)
             
-            print("Account name: \(accountName)")
+            SavingsManager.instance.fetchFromCoreData(completion: { (complete) in
+                if complete {
+                    self.accountPicker.reloadAllComponents()
+                } else {
+                    print("Can not fetch Savings")
+                }
+            })
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil )
         
