@@ -579,6 +579,9 @@
                                                 <real key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="subBtnWasPressed:" destination="W2d-pa-GmO" eventType="touchUpInside" id="jaQ-IY-S4T"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="addSavingsBtn" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayA-ir-5kv" customClass="RoundedGradientButton" customModule="SpendBook" customModuleProvider="target">
                                         <rect key="frame" x="154" y="0.0" width="134" height="40"/>
@@ -591,6 +594,9 @@
                                                 <real key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="addBtnWasPressed:" destination="W2d-pa-GmO" eventType="touchUpInside" id="tGO-Ny-AlQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -619,8 +625,8 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WJY-K6-Hq6">
                                                     <rect key="frame" x="15" y="11" width="258" height="22"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Car" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7Q-iY-sp5">
-                                                            <rect key="frame" x="0.0" y="0.0" width="53.5" height="22"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019-01-14" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7Q-iY-sp5">
+                                                            <rect key="frame" x="0.0" y="0.0" width="82" height="22"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -705,8 +711,7 @@
                     <connections>
                         <outlet property="accountPicker" destination="n1Q-Yt-bMK" id="eUT-WV-tRk"/>
                         <outlet property="acountTableView" destination="X3d-Fd-DYb" id="Sbo-MU-OkJ"/>
-                        <outlet property="addBtn" destination="ayA-ir-5kv" id="7Ll-H5-wuV"/>
-                        <outlet property="subtractionBtn" destination="ORw-FS-bMh" id="AgR-4p-Vnk"/>
+                        <outlet property="balanceLbl" destination="kbA-TS-mhG" id="9Km-aS-i7N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QbZ-EU-NGq" userLabel="First Responder" sceneMemberID="firstResponder"/>

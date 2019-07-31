@@ -10,17 +10,19 @@ import UIKit
 
 class AccountVC: UIViewController {
 
-    @IBOutlet weak var subtractionBtn: RoundedGradientButton!
-    @IBOutlet weak var addBtn: RoundedGradientButton!
     @IBOutlet weak var accountPicker: UIPickerView!
     @IBOutlet weak var acountTableView: UITableView!
+    @IBOutlet weak var balanceLbl: UILabel!
     
+    var currentAccountSelect = Saving()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         accountPicker.dataSource = self
         accountPicker.delegate = self
+        
+        //accountPicker.selectRow(0, inComponent: 0, animated: true)
 
     }
 
@@ -68,9 +70,56 @@ class AccountVC: UIViewController {
     @IBAction func finishBtnWasPressed(_ sender: Any) {
     }
 
+    @IBAction func addBtnWasPressed(_ sender: Any) {
+        operationOnSavings(.Add)
+    }
+    @IBAction func subBtnWasPressed(_ sender: Any) {
+        operationOnSavings(.Substract)
+    }
 }
 
 extension AccountVC {
+    
+    func operationOnSavings(_ action: Operation) {
+
+        let alert = UIAlertController(title: "Operation", message: "Enter the value of the operation", preferredStyle: .alert)
+        alert.addTextField { (textField: UITextField!) in
+            textField.placeholder = "Operation value"
+            textField.keyboardType = .numberPad
+        }
+        
+        var operationText: String = ""
+        
+        switch action {
+        case .Add:
+            operationText = "Add"
+        case .Substract:
+            operationText = "Substract"
+        }
+        let operationAction = UIAlertAction(title: operationText, style: .default) { (action) in
+            print("Save Operation, value: \(alert.textFields![0].text!) ")
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(operationAction)
+        alert.addAction(cancelAction)
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    func updateLabelInfo() {
+        
+        if currentAccountSelect.value >= 0 {
+            balanceLbl.textColor = #colorLiteral(red: 0.2664798796, green: 0.8519781232, blue: 0.8082112074, alpha: 1)
+        } else {
+            balanceLbl.textColor = #colorLiteral(red: 0.9647058824, green: 0.4666666667, blue: 0.6901960784, alpha: 1)
+        }
+        balanceLbl.text = "$" + String(currentAccountSelect.value)
+        
+        //For Debug
+        print("Curent account: \(currentAccountSelect.name!)")
+    }
     
     func saveNewAccount(completion: (_ finished: Bool)->() , _ name: String){
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
@@ -105,8 +154,9 @@ extension AccountVC: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return SavingsManager.instance.getAccountNameList()[row]
     }
-//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        <#code#>
-//    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        currentAccountSelect = SavingsManager.instance.getAccount(atRow: row)
+        updateLabelInfo()
+    }
     
 }

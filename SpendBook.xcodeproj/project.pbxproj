@@ -30,6 +30,7 @@
 		D6C4F5DE20304DA7004DADF4 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5DD20304DA7004DADF4 /* AccountVC.swift */; };
 		D6C4F5E020305A3D004DADF4 /* TodayHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5DF20305A3D004DADF4 /* TodayHistoryCell.swift */; };
 		D6D5AC9221B0863700C07F3E /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D5AC9121B0863700C07F3E /* HistoryCell.swift */; };
+		D6E253672208D2C3002213ED /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E253662208D2C3002213ED /* Operation.swift */; };
 		D6ED1DC721CEB19700459EEB /* SavingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ED1DC621CEB19700459EEB /* SavingsManager.swift */; };
 		D6F377FB21F87E3E00123C7E /* SavingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F377FA21F87E3E00123C7E /* SavingsCell.swift */; };
 /* End PBXBuildFile section */
@@ -76,6 +77,7 @@
 		D6C4F5DD20304DA7004DADF4 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		D6C4F5DF20305A3D004DADF4 /* TodayHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHistoryCell.swift; sourceTree = "<group>"; };
 		D6D5AC9121B0863700C07F3E /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		D6E253662208D2C3002213ED /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		D6ED1DC621CEB19700459EEB /* SavingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsManager.swift; sourceTree = "<group>"; };
 		D6F377FA21F87E3E00123C7E /* SavingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,7 +145,7 @@
 		D64F1D65202CD72300956B2B /* SpendBook */ = {
 			isa = PBXGroup;
 			children = (
-				D66937832031F13A0078228D /* Enums */,
+				D6E253652208D2B0002213ED /* Enum */,
 				D64F1DAC202E0C9E00956B2B /* Utilities */,
 				D64F1DAB202E0C9700956B2B /* Controller */,
 				D64F1DAA202E0C8E00956B2B /* View */,
@@ -212,11 +214,12 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		D66937832031F13A0078228D /* Enums */ = {
+		D6E253652208D2B0002213ED /* Enum */ = {
 			isa = PBXGroup;
 			children = (
+				D6E253662208D2C3002213ED /* Operation.swift */,
 			);
-			path = Enums;
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,6 +438,7 @@
 				D6F377FB21F87E3E00123C7E /* SavingsCell.swift in Sources */,
 				D6050EDA2034AC9B00B50184 /* IconManager.swift in Sources */,
 				D6ED1DC721CEB19700459EEB /* SavingsManager.swift in Sources */,
+				D6E253672208D2C3002213ED /* Operation.swift in Sources */,
 				D6050ED8203402FA00B50184 /* AddTransactionVC.swift in Sources */,
 				D6C4F5DA20304B1D004DADF4 /* HistoryVC.swift in Sources */,
 				D6C4F5DE20304DA7004DADF4 /* AccountVC.swift in Sources */,

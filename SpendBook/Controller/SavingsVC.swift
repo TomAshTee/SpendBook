@@ -21,16 +21,28 @@ class SavingsVC: UIViewController {
         
         savingsTableView.dataSource = self
         savingsTableView.delegate = self
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.fetchCoreDataObjects()
         savingsTableView.reloadData()
+        updateLabelInfo()
     }
     
 }
 
 extension SavingsVC{
+    
+    func updateLabelInfo(){
+        let savingSummary = SavingsManager.instance.getSummaryOfSavings()
+        if savingSummary >= 0 {
+            savingsLbl.textColor = #colorLiteral(red: 0.2664798796, green: 0.8519781232, blue: 0.8082112074, alpha: 1)
+        } else {
+            savingsLbl.textColor = #colorLiteral(red: 0.9647058824, green: 0.4666666667, blue: 0.6901960784, alpha: 1)
+        }
+        savingsLbl.text = "$" + String(savingSummary)
+    }
     
     func removeSaving(atIndexPath indexPath: IndexPath){
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }

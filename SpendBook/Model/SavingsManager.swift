@@ -43,6 +43,10 @@ class SavingsManager {
         return Int(summaryOfSavings)
     }
     
+    public func getAccount(atRow row: Int) -> Saving{
+        return _savingsList[row]
+    }
+    
     public func todayDate(_ forSaving: Saving){
         let date = Date()
         let formater = DateFormatter()
