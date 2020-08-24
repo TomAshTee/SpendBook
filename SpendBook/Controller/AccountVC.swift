@@ -78,8 +78,54 @@ class AccountVC: UIViewController {
     }
 }
 
+//MARK: - CoreData extension
+
 extension AccountVC {
+    func saveNewAccount(completion: (_ finished: Bool)->() , _ name: String){
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        let saving = Saving(context: managedContext)
+        
+        
+        saving.name = name
+        saving.operations?.append(name)
+        saving.value = 0
+        SavingsManager.instance.todayDate(saving)
+        
+        do {
+            try managedContext.save()
+            completion(true)
+        } catch {
+            debugPrint("Colud not save: \(error.localizedDescription)")
+            completion(false)
+        }
+        
+    }
     
+}
+
+//MARK: - PickerView Delegate & DataSource extension
+
+extension AccountVC: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return SavingsManager.instance.countAccount()
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return SavingsManager.instance.getAccountNameList()[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        currentAccountSelect = SavingsManager.instance.getAccount(atRow: row)
+        updateLabelInfo()
+    }
+    
+}
+
+//MARK: - Functions extension
+
+extension AccountVC {
     func operationOnSavings(_ action: Operation) {
 
         let alert = UIAlertController(title: "Operation", message: "Enter the value of the operation", preferredStyle: .alert)
@@ -120,43 +166,4 @@ extension AccountVC {
         //For Debug
         print("Curent account: \(currentAccountSelect.name!)")
     }
-    
-    func saveNewAccount(completion: (_ finished: Bool)->() , _ name: String){
-        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
-        let saving = Saving(context: managedContext)
-        
-        
-        saving.name = name
-        saving.operations?.append(name)
-        saving.value = 0
-        SavingsManager.instance.todayDate(saving)
-        
-        do {
-            try managedContext.save()
-            completion(true)
-        } catch {
-            debugPrint("Colud not save: \(error.localizedDescription)")
-            completion(false)
-        }
-        
-    }
-    
-}
-
-extension AccountVC: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return SavingsManager.instance.countAccount()
-    }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return SavingsManager.instance.getAccountNameList()[row]
-    }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        currentAccountSelect = SavingsManager.instance.getAccount(atRow: row)
-        updateLabelInfo()
-    }
-    
 }

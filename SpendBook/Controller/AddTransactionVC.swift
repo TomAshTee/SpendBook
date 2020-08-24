@@ -11,7 +11,6 @@ import UIKit
 class AddTransactionVC: UIViewController{
 
     // Outlets
-
     @IBOutlet weak var valueTextField: UITextField!
     @IBOutlet weak var typePicker: UIPickerView!
     @IBOutlet weak var dolarLbl: UILabel!
@@ -30,7 +29,7 @@ class AddTransactionVC: UIViewController{
         
         updateView()
         
-        // Set up keyboar Btn
+        // Set up keyboard Btn
         setTransactionBtn.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: 45)
         setTransactionBtn.setTitle("Set transaction", for: .normal)
         setTransactionBtn.setTitleColor(UIColor.white, for: .normal)
@@ -39,13 +38,15 @@ class AddTransactionVC: UIViewController{
         
     }
     
-    
     // Actions
     @IBAction func backBtnPressed(_ sender: Any) {
         dismissView()
     }
-    
-    // Func
+}
+
+//MARK: - Functions extension
+
+extension AddTransactionVC {
     @objc func setTransaction(){
         
         if valueTextField.text != "" {
@@ -71,8 +72,30 @@ class AddTransactionVC: UIViewController{
         view.endEditing(true)
         dismiss(animated: true, completion: nil)
     }
-    
-    // Save to CoreData
+}
+
+//MARK: - PickerView Delegate & DataSource extension
+
+extension AddTransactionVC: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return IconManager.instance.countIcon()
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return IconManager.instance.getIconList()[row]
+    }
+ 
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        valueTextField.placeholder = "Value of " + IconManager.instance.getIconList()[row]
+    }
+}
+
+//MARK: - CoreData extension
+
+extension AddTransactionVC {
     func save(completion: (_ finished: Bool)->()){
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
         
@@ -110,22 +133,5 @@ class AddTransactionVC: UIViewController{
             debugPrint("Could not save: \(error.localizedDescription)")
             completion(false)
         }
-    }
-}
-
-extension AddTransactionVC: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return IconManager.instance.countIcon()
-    }
-
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return IconManager.instance.getIconList()[row]
-    }
- 
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        valueTextField.placeholder = "Value of " + IconManager.instance.getIconList()[row]
     }
 }

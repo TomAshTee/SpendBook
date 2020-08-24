@@ -54,6 +54,8 @@ class HistoryVC: UIViewController {
 
 }
 
+//MARK: - TableView Delegate & DataSource extension
+
 extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -79,6 +81,8 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 }
+
+//MARK: - Functions extension
 
 extension HistoryVC {
     

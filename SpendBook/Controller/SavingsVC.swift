@@ -32,17 +32,9 @@ class SavingsVC: UIViewController {
     
 }
 
+//MARK: - CoreData extension
+
 extension SavingsVC{
-    
-    func updateLabelInfo(){
-        let savingSummary = SavingsManager.instance.getSummaryOfSavings()
-        if savingSummary >= 0 {
-            savingsLbl.textColor = #colorLiteral(red: 0.2664798796, green: 0.8519781232, blue: 0.8082112074, alpha: 1)
-        } else {
-            savingsLbl.textColor = #colorLiteral(red: 0.9647058824, green: 0.4666666667, blue: 0.6901960784, alpha: 1)
-        }
-        savingsLbl.text = "$" + String(savingSummary)
-    }
     
     func removeSaving(atIndexPath indexPath: IndexPath){
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
@@ -71,6 +63,8 @@ extension SavingsVC{
         }
     }
 }
+
+//MARK: - TableView Delegate & DataSource extension
 
 extension SavingsVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -115,5 +109,19 @@ extension SavingsVC: UITableViewDelegate, UITableViewDataSource {
         }
         deletAction.backgroundColor = #colorLiteral(red: 0.9647058824, green: 0.4666666667, blue: 0.6901960784, alpha: 1)
         return [deletAction]
+    }
+}
+
+//MARK: - Function extension
+
+extension SavingsVC {
+    func updateLabelInfo(){
+        let savingSummary = SavingsManager.instance.getSummaryOfSavings()
+        if savingSummary >= 0 {
+            savingsLbl.textColor = #colorLiteral(red: 0.2664798796, green: 0.8519781232, blue: 0.8082112074, alpha: 1)
+        } else {
+            savingsLbl.textColor = #colorLiteral(red: 0.9647058824, green: 0.4666666667, blue: 0.6901960784, alpha: 1)
+        }
+        savingsLbl.text = "$" + String(savingSummary)
     }
 }
