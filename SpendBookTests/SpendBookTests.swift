@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import SpendBook
+//@testable import SpendBook
 
 class SpendBookTests: XCTestCase {
     
