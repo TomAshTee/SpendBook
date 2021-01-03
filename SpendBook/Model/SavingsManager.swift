@@ -35,6 +35,13 @@ class SavingsManager {
         return accountNameList
     }
     
+    public func isThereAnySavings() -> Bool {
+        guard _savingsList.count != 0 else {
+            return false
+        }
+        return true
+    }
+    
     public func getSummaryOfSavings() -> Int {
         var summaryOfSavings: Int32 = 0
         for saving in _savingsList {
@@ -55,6 +62,7 @@ class SavingsManager {
         forSaving.date = formater.string(from: date)
     }
     
+    //MARK: - Fetch from CoreData
     public func fetchFromCoreData(completion: (_ complete: Bool) -> ()){
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Saving")

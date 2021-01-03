@@ -117,10 +117,14 @@ extension AccountVC: UIPickerViewDelegate, UIPickerViewDataSource {
         return SavingsManager.instance.getAccountNameList()[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        //Checking is there already any savings account
+        guard SavingsManager.instance.isThereAnySavings() else {
+            print("_savings.count = \(SavingsManager.instance.getAllSavings().count)")
+            return
+        }
         currentAccountSelect = SavingsManager.instance.getAccount(atRow: row)
         updateLabelInfo()
     }
-    
 }
 
 //MARK: - Functions extension
