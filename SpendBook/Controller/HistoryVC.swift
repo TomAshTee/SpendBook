@@ -38,6 +38,9 @@ class HistoryVC: UIViewController {
         datePicker.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         datePicker.addTarget(self, action: #selector(HistoryVC.dateChanged(_:)), for: .valueChanged)
         
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.sizeToFit()
+        
         fromTextFiled.inputView = datePicker
         toTextFiled.inputView = datePicker
         setUpTodayDate(fromTextFiled)
