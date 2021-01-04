@@ -9,7 +9,11 @@
 import UIKit
 import CoreData
 
-class MainVC: UIViewController {
+protocol AddTransactionProtocol {
+    func addTransaction()
+}
+
+class MainVC: UIViewController{
 
     // Outlets
     @IBOutlet weak var historyTableView: UITableView!
@@ -45,6 +49,7 @@ class MainVC: UIViewController {
                 viewController.textForDolarLbl = "$-"
                 viewController.signOfTransaction = "-"
             }
+            viewController.delegate = self
         }
     }
 }
@@ -172,6 +177,14 @@ extension MainVC {
     }
 }
 
+//MARK: - AddTransaction Protocol Extension
+
+extension MainVC: AddTransactionProtocol {
+    func addTransaction() {
+        fetchCoreDataObjects()
+        historyTableView.reloadData()
+    }
+}
 
 
 

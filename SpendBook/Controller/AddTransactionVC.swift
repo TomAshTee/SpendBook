@@ -19,7 +19,7 @@ class AddTransactionVC: UIViewController{
     var textForDolarLbl = String()
     var colorForTransaction = UIColor()
     var signOfTransaction = String()
-    
+    var delegate: AddTransactionProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +71,7 @@ extension AddTransactionVC {
     func dismissView() {
         view.endEditing(true)
         dismiss(animated: true, completion: nil)
+        delegate?.addTransaction()
     }
 }
 
