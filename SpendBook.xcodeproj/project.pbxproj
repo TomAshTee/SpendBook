@@ -21,7 +21,7 @@
 		D64F1D7F202CD72300956B2B /* SpendBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64F1D7E202CD72300956B2B /* SpendBookTests.swift */; };
 		D64F1DAE202E0CC000956B2B /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64F1DAD202E0CC000956B2B /* MainVC.swift */; };
 		D66937822031EBF90078228D /* AnimateTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66937812031EBF90078228D /* AnimateTableView.swift */; };
-		D6AD412425A27231001FC4CF /* SpendBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AD412325A27231001FC4CF /* SpendBookUITests.swift */; };
+		D6AD412425A27231001FC4CF /* MainVCAndAddTransactionVCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AD412325A27231001FC4CF /* MainVCAndAddTransactionVCUITests.swift */; };
 		D6C4F5D6202F4A40004DADF4 /* GradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5D5202F4A40004DADF4 /* GradientLayer.swift */; };
 		D6C4F5D820304A8A004DADF4 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5D720304A8A004DADF4 /* SettingsVC.swift */; };
 		D6C4F5DA20304B1D004DADF4 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5D920304B1D004DADF4 /* HistoryVC.swift */; };
@@ -71,7 +71,7 @@
 		D64F1DAD202E0CC000956B2B /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		D66937812031EBF90078228D /* AnimateTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateTableView.swift; sourceTree = "<group>"; };
 		D6AD412125A27231001FC4CF /* SpendBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpendBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6AD412325A27231001FC4CF /* SpendBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendBookUITests.swift; sourceTree = "<group>"; };
+		D6AD412325A27231001FC4CF /* MainVCAndAddTransactionVCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCAndAddTransactionVCUITests.swift; sourceTree = "<group>"; };
 		D6AD412525A27231001FC4CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6C4F5D5202F4A40004DADF4 /* GradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLayer.swift; sourceTree = "<group>"; };
 		D6C4F5D720304A8A004DADF4 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 		D6AD412225A27231001FC4CF /* SpendBookUITests */ = {
 			isa = PBXGroup;
 			children = (
-				D6AD412325A27231001FC4CF /* SpendBookUITests.swift */,
+				D6AD412325A27231001FC4CF /* MainVCAndAddTransactionVCUITests.swift */,
 				D6AD412525A27231001FC4CF /* Info.plist */,
 			);
 			path = SpendBookUITests;
@@ -390,7 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6AD412425A27231001FC4CF /* SpendBookUITests.swift in Sources */,
+				D6AD412425A27231001FC4CF /* MainVCAndAddTransactionVCUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

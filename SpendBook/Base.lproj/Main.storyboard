@@ -722,6 +722,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1304" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s28-ef-yFg">
                                 <rect key="frame" x="273" y="75" width="86" height="50"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Monthly balance"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="fJb-gx-uHc"/>
                                 </constraints>
@@ -731,6 +732,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$-58" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KhT-Tq-asg">
                                 <rect key="frame" x="325.33333333333331" y="134" width="33.666666666666686" height="22"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Daily balance"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="Nn5-L5-9P8"/>
                                 </constraints>
@@ -740,6 +742,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$12030" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tl0-Qk-43h">
                                 <rect key="frame" x="302" y="173" width="57" height="22"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Total balance"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="BLY-sF-drX"/>
                                 </constraints>
@@ -1001,7 +1004,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dqA-Yj-WSD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="787.5" y="-13.732394366197184"/>
+            <point key="canvasLocation" x="786.39999999999998" y="-14.039408866995075"/>
         </scene>
         <!--SettingsVC-->
         <scene sceneID="f7W-qA-TUd">
