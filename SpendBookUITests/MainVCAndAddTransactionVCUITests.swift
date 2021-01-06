@@ -11,9 +11,32 @@ import XCTest
 class MainVCAndAddTransactionVCUITests: XCTestCase {
     
     let app = XCUIApplication()
+    
+    var dailyBalnaceBaseString: String = ""
+    var dailyBalanceBaseInt: Int = 0
+    var totalBalanceBaseString: String = ""
+    var totalBalanceBaseInt: Int = 0
+    var monthlyBalanceBaseString: String = ""
+    var monthlyBalanceBaseInt: Int = 0
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        //Read a base value
+        app.launch()
+        
+        dailyBalnaceBaseString = app.staticTexts.element(matching: .any, identifier: "Daily balance").label
+        dailyBalnaceBaseString.remove(at: dailyBalnaceBaseString.startIndex)
+        dailyBalanceBaseInt = Int(dailyBalnaceBaseString)!
+        
+        totalBalanceBaseString = app.staticTexts.element(matching: .any, identifier: "Total balance").label
+        totalBalanceBaseString.remove(at: totalBalanceBaseString.startIndex)
+        totalBalanceBaseInt = Int(totalBalanceBaseString)!
+        
+        monthlyBalanceBaseString = app.staticTexts.element(matching: .any, identifier: "Monthly balance").label
+        monthlyBalanceBaseString.remove(at: monthlyBalanceBaseString.startIndex)
+        monthlyBalanceBaseInt = Int(monthlyBalanceBaseString)!
+        
 
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
@@ -29,18 +52,6 @@ class MainVCAndAddTransactionVCUITests: XCTestCase {
         
         app.launch()
         
-        //Read a base value
-        var dailyBalnaceBaseString = app.staticTexts.element(matching: .any, identifier: "Daily balance").label
-        dailyBalnaceBaseString.remove(at: dailyBalnaceBaseString.startIndex)
-        let dailyBalanceBaseInt = Int(dailyBalnaceBaseString)!
-        
-        var totalBalanceBaseString = app.staticTexts.element(matching: .any, identifier: "Total balance").label
-        totalBalanceBaseString.remove(at: totalBalanceBaseString.startIndex)
-        let totalBalanceBaseInt = Int(totalBalanceBaseString)!
-        
-        var monthlyBalanceBaseString = app.staticTexts.element(matching: .any, identifier: "Monthly balance").label
-        monthlyBalanceBaseString.remove(at: monthlyBalanceBaseString.startIndex)
-        let monthlyBalanceBaseInt = Int(monthlyBalanceBaseString)!
         
         //Add trensaction
         app.buttons["Icon minus"].tap()
@@ -63,6 +74,16 @@ class MainVCAndAddTransactionVCUITests: XCTestCase {
         let dailyBalanceInt = Int(dailyBalanceString)!
         XCTAssertEqual((dailyBalanceInt - dailyBalanceBaseInt), -257)
         
+        var totalBalanceString = app.staticTexts.element(matching: .any, identifier: "Total balance").label
+        totalBalanceString.remove(at: dailyBalanceString.startIndex)
+        let totalBalanceInt = Int(totalBalanceString)!
+        XCTAssertEqual((totalBalanceInt - totalBalanceBaseInt), -257)
+        
+        var monthlyBalanceString = app.staticTexts.element(matching: .any, identifier: "Monthly balance").label
+        monthlyBalanceString.remove(at: monthlyBalanceString.startIndex)
+        let monthlyBalanceInt = Int(monthlyBalanceString)!
+        XCTAssertEqual((monthlyBalanceInt - monthlyBalanceBaseInt), -257)
+        
         //Delete transaction
         let tablesQuery = XCUIApplication().tables
         tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["$-257"]/*[[".cells.staticTexts[\"$-257\"]",".staticTexts[\"$-257\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.firstMatch.swipeLeft()
@@ -72,9 +93,10 @@ class MainVCAndAddTransactionVCUITests: XCTestCase {
     }
 
     func testAddAndDeleteIncomes() throws {
-        
-        let app = XCUIApplication()
+    
         app.launch()
+        
+        //Add transaction
         app.buttons["Icon plus"].tap()
         app/*@START_MENU_TOKEN@*/.pickerWheels["Car"]/*[[".pickers.pickerWheels[\"Car\"]",".pickerWheels[\"Car\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.adjust(toPickerWheelValue: "Income")
         app.textFields["Value of Income"].tap()
@@ -90,6 +112,23 @@ class MainVCAndAddTransactionVCUITests: XCTestCase {
         app/*@START_MENU_TOKEN@*/.staticTexts["Set transaction"]/*[[".buttons[\"Set transaction\"].staticTexts[\"Set transaction\"]",".staticTexts[\"Set transaction\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app.tables.cells.containing(.staticText, identifier:"$189").staticTexts["Income"].firstMatch.tap()
         
+        //Check current changes
+        var dailyBalanceString = app.staticTexts.element(matching: .any, identifier: "Daily balance").label
+        dailyBalanceString.remove(at: dailyBalanceString.startIndex)
+        let dailyBalanceInt = Int(dailyBalanceString)!
+        XCTAssertEqual((dailyBalanceInt - dailyBalanceBaseInt), 189)
+        
+        var totalBalanceString = app.staticTexts.element(matching: .any, identifier: "Total balance").label
+        totalBalanceString.remove(at: dailyBalanceString.startIndex)
+        let totalBalanceInt = Int(totalBalanceString)!
+        XCTAssertEqual((totalBalanceInt - totalBalanceBaseInt), 189)
+        
+        var monthlyBalanceString = app.staticTexts.element(matching: .any, identifier: "Monthly balance").label
+        monthlyBalanceString.remove(at: monthlyBalanceString.startIndex)
+        let monthlyBalanceInt = Int(monthlyBalanceString)!
+        XCTAssertEqual((monthlyBalanceInt - monthlyBalanceBaseInt), 189)
+        
+        //Delete transaction
         let tablesQuery = XCUIApplication().tables
         tablesQuery.staticTexts["$189"].firstMatch.swipeLeft()
         tablesQuery/*@START_MENU_TOKEN@*/.buttons["DELETE"]/*[[".cells.buttons[\"DELETE\"]",".buttons[\"DELETE\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
