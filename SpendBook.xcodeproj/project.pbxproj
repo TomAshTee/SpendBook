@@ -30,6 +30,7 @@
 		D6C4F5E020305A3D004DADF4 /* TodayHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5DF20305A3D004DADF4 /* TodayHistoryCell.swift */; };
 		D6D5AC9221B0863700C07F3E /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D5AC9121B0863700C07F3E /* HistoryCell.swift */; };
 		D6E253672208D2C3002213ED /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E253662208D2C3002213ED /* Operation.swift */; };
+		D6E5978325A79CA800B2769C /* HistoryVCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E5978225A79CA800B2769C /* HistoryVCUITests.swift */; };
 		D6ED1DC721CEB19700459EEB /* SavingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ED1DC621CEB19700459EEB /* SavingsManager.swift */; };
 		D6F377FB21F87E3E00123C7E /* SavingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F377FA21F87E3E00123C7E /* SavingsCell.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +82,7 @@
 		D6C4F5DF20305A3D004DADF4 /* TodayHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHistoryCell.swift; sourceTree = "<group>"; };
 		D6D5AC9121B0863700C07F3E /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		D6E253662208D2C3002213ED /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		D6E5978225A79CA800B2769C /* HistoryVCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVCUITests.swift; sourceTree = "<group>"; };
 		D6ED1DC621CEB19700459EEB /* SavingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsManager.swift; sourceTree = "<group>"; };
 		D6F377FA21F87E3E00123C7E /* SavingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				D6AD412325A27231001FC4CF /* MainVCAndAddTransactionVCUITests.swift */,
+				D6E5978225A79CA800B2769C /* HistoryVCUITests.swift */,
 				D6AD412525A27231001FC4CF /* Info.plist */,
 			);
 			path = SpendBookUITests;
@@ -391,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6AD412425A27231001FC4CF /* MainVCAndAddTransactionVCUITests.swift in Sources */,
+				D6E5978325A79CA800B2769C /* HistoryVCUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
