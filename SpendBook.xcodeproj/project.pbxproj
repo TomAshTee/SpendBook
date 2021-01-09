@@ -18,7 +18,6 @@
 		D64F1D6F202CD72300956B2B /* SpendBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D64F1D6D202CD72300956B2B /* SpendBook.xcdatamodeld */; };
 		D64F1D71202CD72300956B2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D64F1D70202CD72300956B2B /* Assets.xcassets */; };
 		D64F1D74202CD72300956B2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D64F1D72202CD72300956B2B /* LaunchScreen.storyboard */; };
-		D64F1D7F202CD72300956B2B /* SpendBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64F1D7E202CD72300956B2B /* SpendBookTests.swift */; };
 		D64F1DAE202E0CC000956B2B /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64F1DAD202E0CC000956B2B /* MainVC.swift */; };
 		D66937822031EBF90078228D /* AnimateTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66937812031EBF90078228D /* AnimateTableView.swift */; };
 		D6AD412425A27231001FC4CF /* MainVCAndAddTransactionVCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AD412325A27231001FC4CF /* MainVCAndAddTransactionVCUITests.swift */; };
@@ -28,6 +27,7 @@
 		D6C4F5DC20304D91004DADF4 /* SavingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5DB20304D91004DADF4 /* SavingsVC.swift */; };
 		D6C4F5DE20304DA7004DADF4 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5DD20304DA7004DADF4 /* AccountVC.swift */; };
 		D6C4F5E020305A3D004DADF4 /* TodayHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5DF20305A3D004DADF4 /* TodayHistoryCell.swift */; };
+		D6CCCD9025A9D5A80060C514 /* IconManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CCCD8F25A9D5A80060C514 /* IconManagerTests.swift */; };
 		D6D5AC9221B0863700C07F3E /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D5AC9121B0863700C07F3E /* HistoryCell.swift */; };
 		D6E253672208D2C3002213ED /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E253662208D2C3002213ED /* Operation.swift */; };
 		D6E5978325A79CA800B2769C /* HistoryVCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E5978225A79CA800B2769C /* HistoryVCUITests.swift */; };
@@ -67,7 +67,6 @@
 		D64F1D73202CD72300956B2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D64F1D75202CD72300956B2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D64F1D7A202CD72300956B2B /* SpendBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpendBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D64F1D7E202CD72300956B2B /* SpendBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendBookTests.swift; sourceTree = "<group>"; };
 		D64F1D80202CD72300956B2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D64F1DAD202E0CC000956B2B /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		D66937812031EBF90078228D /* AnimateTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateTableView.swift; sourceTree = "<group>"; };
@@ -80,6 +79,7 @@
 		D6C4F5DB20304D91004DADF4 /* SavingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsVC.swift; sourceTree = "<group>"; };
 		D6C4F5DD20304DA7004DADF4 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		D6C4F5DF20305A3D004DADF4 /* TodayHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHistoryCell.swift; sourceTree = "<group>"; };
+		D6CCCD8F25A9D5A80060C514 /* IconManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconManagerTests.swift; sourceTree = "<group>"; };
 		D6D5AC9121B0863700C07F3E /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		D6E253662208D2C3002213ED /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		D6E5978225A79CA800B2769C /* HistoryVCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVCUITests.swift; sourceTree = "<group>"; };
@@ -153,8 +153,8 @@
 		D64F1D7D202CD72300956B2B /* SpendBookTests */ = {
 			isa = PBXGroup;
 			children = (
-				D64F1D7E202CD72300956B2B /* SpendBookTests.swift */,
 				D64F1D80202CD72300956B2B /* Info.plist */,
+				D6CCCD8F25A9D5A80060C514 /* IconManagerTests.swift */,
 			);
 			path = SpendBookTests;
 			sourceTree = "<group>";
@@ -385,7 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D64F1D7F202CD72300956B2B /* SpendBookTests.swift in Sources */,
+				D6CCCD9025A9D5A80060C514 /* IconManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,7 +484,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -538,7 +538,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -553,7 +553,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5F3T78YFZV;
 				INFOPLIST_FILE = SpendBook/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tomaszjaeschke.SpendBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -569,7 +569,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5F3T78YFZV;
 				INFOPLIST_FILE = SpendBook/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tomaszjaeschke.SpendBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -586,6 +586,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5F3T78YFZV;
 				INFOPLIST_FILE = SpendBookTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tomaszjaeschke.SpendBookTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -603,6 +604,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5F3T78YFZV;
 				INFOPLIST_FILE = SpendBookTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tomaszjaeschke.SpendBookTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
