@@ -13,6 +13,7 @@ import CoreData
 class TransactionManagerTests: XCTestCase {
     
     var sampleListOfTransaction: [Transaction] = []
+    let testNumberOfTransaction = 5
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -31,14 +32,32 @@ class TransactionManagerTests: XCTestCase {
         }
         let managedContext = container.viewContext
         
-//        for i in 0...3 {
-//            var transaction = Transaction(context: managedContext)
-//            transaction.date = "Test"
-//            sampleListOfTransaction.append(transaction)
-//        }
-//        for transaction in sampleListOfTransaction {
-//            print("MESAGE: \(transaction.date)")
-//        }
+        // Setup component for Date
+        let date = Date()
+        let calendar = Calendar.current
+        let formater = DateFormatter()
+        
+    
+        for _ in 1...testNumberOfTransaction {
+            let transaction = Transaction(context: managedContext)
+            
+            //Feel entity with data
+            transaction.type = "Other"
+            transaction.value = Int32.random(in: 0...9999)
+            transaction.sign = "+"
+            
+            transaction.day = Int16(calendar.component(.day, from: date))
+            transaction.month = Int16(calendar.component(.month, from: date))
+            transaction.year = Int16(calendar.component(.year, from: date))
+            transaction.hour = Int16(calendar.component(.hour, from: date))
+            transaction.minute = Int16(calendar.component(.minute, from: date))
+            
+            formater.dateFormat = "yyyy-MM-dd HH:mm"
+            
+            transaction.date = formater.string(from: date)
+                
+            sampleListOfTransaction.append(transaction)
+        }
     }
 
     override func tearDownWithError() throws {
@@ -56,5 +75,5 @@ class TransactionManagerTests: XCTestCase {
 //            // Put the code you want to measure the time of here.
 //        }
 //    }
-
+    
 }
