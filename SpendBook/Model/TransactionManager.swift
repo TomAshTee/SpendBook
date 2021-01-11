@@ -80,7 +80,7 @@ class TransactionManager {
     }
     
     // Pobranie jednej transakcjie ze wszytkich dni
-    public func getAll(_ trancsationOfIndex: Int) -> Transaction {
+    public func getFromAll(_ trancsationOfIndex: Int) -> Transaction {
         return _transactionList[trancsationOfIndex]
     }
     
