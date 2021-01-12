@@ -36,7 +36,7 @@ class TransactionManagerTests: XCTestCase {
         let managedContext = container.viewContext
         
         // Setup component for Date
-        let date = Date()
+        var date = Date()
         let calendar = Calendar.current
         let formater = DateFormatter()
         
@@ -64,9 +64,12 @@ class TransactionManagerTests: XCTestCase {
             
             formater.dateFormat = "yyyy-MM-dd HH:mm"
             
+            if i == testNumberOfTransaction {
+                date = calendar.date(byAdding: .year, value: -1, to: date)!
+            }
             transaction.date = formater.string(from: date)
             
-            print(transaction.year)
+            print(transaction.date)
                 
             sampleListOfTransaction.append(transaction)
         }
@@ -86,20 +89,20 @@ class TransactionManagerTests: XCTestCase {
         let fromDate = Date()
         let toDate = Date()
         let returnedListOfTransactions = TransactionManager.instance.getTransaction(fromDate, toDate)
-        XCTAssertEqual(returnedListOfTransactions, sampleListOfTransaction)
+        XCTAssertEqual(returnedListOfTransactions.count, 4)
     }
     
     func testGetTodayTransactionOfIndexNumberOne() throws {
         
-        let returnedTransaction = TransactionManager.instance.getToday(1)
-        XCTAssertEqual(returnedTransaction, sampleListOfTransaction[1])
+        let returnedTransaction = TransactionManager.instance.getToday(0)
+        XCTAssertEqual(returnedTransaction, sampleListOfTransaction[0])
         
     }
     
     func testGetOneFromAllTransaction() throws {
         
-        let returnedTransaction = TransactionManager.instance.getFromAll(1)
-        XCTAssertEqual(returnedTransaction, sampleListOfTransaction[1])
+        let returnedTransaction = TransactionManager.instance.getFromAll(0)
+        XCTAssertEqual(returnedTransaction, sampleListOfTransaction[0])
         
     }
     
@@ -109,5 +112,43 @@ class TransactionManagerTests: XCTestCase {
         XCTAssertEqual(returnedValue, 15)
     }
     
+    func testGetMonthlyValueOfTransaction() throws {
+        
+        let returnedValue = TransactionManager.instance.getMonthlyValue()
+        XCTAssertEqual(returnedValue, 10)
+    }
+
+    func testGetTodayValueOfTransaction() throws {
+        
+        let returnedValue = TransactionManager.instance.getTodayValue()
+        XCTAssertEqual(returnedValue, 10)
+    }
+    
+    func testCountTodayNumberOfTransaction() throws {
+        
+        let returnedValue = TransactionManager.instance.countToday()
+        XCTAssertEqual(returnedValue, 4)
+    }
+    
+    func testSetupDateForTodayTransaction() throws {
+    
+        sampleListOfTransaction[4].date = nil
+        sampleListOfTransaction[4].day = 0
+        sampleListOfTransaction[4].month = 0
+        sampleListOfTransaction[4].year = 0
+        sampleListOfTransaction[4].hour = 99
+        sampleListOfTransaction[4].minute = 99
+        
+        XCTAssertNotEqual(sampleListOfTransaction[4].date, sampleListOfTransaction[3].date)
+        
+        TransactionManager.todayDate(sampleListOfTransaction[4])
+        
+        XCTAssertEqual(sampleListOfTransaction[4].date, sampleListOfTransaction[3].date)
+        XCTAssertEqual(sampleListOfTransaction[4].day, sampleListOfTransaction[3].day)
+        XCTAssertEqual(sampleListOfTransaction[4].month, sampleListOfTransaction[3].month)
+        XCTAssertEqual(sampleListOfTransaction[4].year, sampleListOfTransaction[3].year)
+        XCTAssertEqual(sampleListOfTransaction[4].hour, sampleListOfTransaction[3].hour)
+        XCTAssertEqual(sampleListOfTransaction[4].minute, sampleListOfTransaction[3].minute)
+    }
     
 }
