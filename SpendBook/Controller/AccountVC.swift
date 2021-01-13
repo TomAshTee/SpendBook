@@ -15,6 +15,7 @@ class AccountVC: UIViewController {
     @IBOutlet weak var balanceLbl: UILabel!
     
     var currentAccountSelect = Saving()
+    var delegate: UpdateViewProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,7 @@ class AccountVC: UIViewController {
                     print("Can not fetch Savings")
                 }
             })
+            self.delegate?.updateView()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil )
         
@@ -155,6 +157,8 @@ extension AccountVC {
         alert.addAction(cancelAction)
         
         self.present(alert, animated: true, completion: nil)
+        
+        delegate?.updateView()
         
     }
     

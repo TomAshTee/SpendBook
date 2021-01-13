@@ -9,8 +9,8 @@
 import UIKit
 import CoreData
 
-protocol AddTransactionProtocol {
-    func addTransaction()
+protocol UpdateViewProtocol {
+    func updateView()
 }
 
 class MainVC: UIViewController{
@@ -177,10 +177,10 @@ extension MainVC {
     }
 }
 
-//MARK: - AddTransaction Protocol Extension
+//MARK: - AupdateView Protocol Extension
 
-extension MainVC: AddTransactionProtocol {
-    func addTransaction() {
+extension MainVC: UpdateViewProtocol {
+    func updateView() {
         fetchCoreDataObjects()
         historyTableView.reloadData()
     }

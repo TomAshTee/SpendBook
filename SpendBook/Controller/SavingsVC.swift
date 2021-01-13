@@ -23,13 +23,15 @@ class SavingsVC: UIViewController {
         savingsTableView.delegate = self
         
     }
-    
     override func viewWillAppear(_ animated: Bool) {
-        self.fetchCoreDataObjects()
-        savingsTableView.reloadData()
-        updateLabelInfo()
+        updateView()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let viewController = segue.destination as? AccountVC {
+            viewController.delegate = self
+        }
+    }
 }
 
 //MARK: - CoreData extension
@@ -145,5 +147,15 @@ extension SavingsVC {
             savingsLbl.textColor = #colorLiteral(red: 0.9647058824, green: 0.4666666667, blue: 0.6901960784, alpha: 1)
         }
         savingsLbl.text = "$" + String(savingSummary)
+    }
+}
+
+//MARK: - UpdateView Protocol extension
+
+extension SavingsVC: UpdateViewProtocol {
+    func updateView() {
+        self.fetchCoreDataObjects()
+        savingsTableView.reloadData()
+        updateLabelInfo()
     }
 }
