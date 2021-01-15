@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TransactionManager {
     
@@ -164,4 +165,33 @@ class TransactionManager {
         
     }
     
+    //MARK: - Fetch from core data
+    
+    public func fetchFromCoreData(completion: (_ complete: Bool) -> ()) {
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Transaction")
+        
+        do {
+            try TransactionManager.instance.setList(managedContext.fetch(fetchRequest) as! [Transaction])
+            print("Successfull fetched data.")
+            completion(true)
+        } catch {
+            debugPrint("Could not fetch: \(error.localizedDescription)")
+            completion(false )
+        }
+    }
+    
+    public func remove(transactionAt indexPath: IndexPath) {
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        // Transaction list is reverse by the way it's display
+        managedContext.delete(TransactionManager.instance.getToday((TransactionManager.instance.countToday() - 1) - indexPath.row))
+        
+        do {
+            try managedContext.save()
+            print("Successfull remove transaction")
+        } catch {
+            debugPrint("Could not remove: \(error.localizedDescription)")
+        }
+    }
 }
+

@@ -84,7 +84,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         let deleteAction = UIContextualAction(style: .destructive, title: "DELETE") { (rowAction, view, boolValue) in
             // Do this when press button DELETE
         
-            self.removeTransaction(atIndexPath: indexPath)
+            TransactionManager.instance.remove(transactionAt: indexPath)
             self.fetchCoreDataObjects()
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
@@ -99,7 +99,7 @@ extension MainVC {
     
     //  Reakcja UI na pobrane dane z CoreData
     func fetchCoreDataObjects () {
-        self.fetch { (complete) in
+        TransactionManager.instance.fetchFromCoreData { (complete) in
             if complete {
                 if TransactionManager.instance.countToday() > 0{
                     historyTableView.isHidden = false
@@ -113,35 +113,6 @@ extension MainVC {
                 print("All transaction count: \(TransactionManager.instance.countAll())")
                 print("Today transaction count: \(TransactionManager.instance.countToday())")
             }
-        }
-    }
-    
-    // Remove data form CoreData
-    func removeTransaction(atIndexPath indexPath: IndexPath){
-        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
-        // Transaction list is reverse by the way it's display
-        managedContext.delete(TransactionManager.instance.getToday((TransactionManager.instance.countToday() - 1) - indexPath.row))
-        
-        do {
-            try managedContext.save()
-            print("Successfull remove transaction")
-        } catch {
-            debugPrint("Could not remove: \(error.localizedDescription)")
-        }
-    }
-    
-    // Load data from CoreData
-    func fetch(completion: (_ complete: Bool) -> ()){
-        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Transaction")
-        
-        do {
-            try TransactionManager.instance.setList(managedContext.fetch(fetchRequest) as! [Transaction])
-            print("Successfull fetched data.")
-            completion(true)
-        } catch {
-            debugPrint("Could not fetch: \(error.localizedDescription)")
-            completion(false )
         }
     }
 }
