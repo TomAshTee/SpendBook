@@ -54,6 +54,13 @@ class SavingsManager {
         return _savingsList[row]
     }
     
+    public func getPartListFromAccount(_ fromSaving: Saving) -> [String] {
+        guard let list = fromSaving.parts else {
+            return []
+        }
+        return list
+    }
+    
     public func todayDate(_ forSaving: Saving){
         let date = Date()
         let formater = DateFormatter()
