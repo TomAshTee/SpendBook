@@ -99,7 +99,6 @@ extension AccountVC {
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
         let saving = Saving(context: managedContext)
         
-        
         saving.name = name
         saving.parts = ["1","2"]
         saving.value = 0
@@ -209,6 +208,7 @@ extension AccountVC {
         }
         let operationAction = UIAlertAction(title: operationText, style: .default) { (action) in
             print("Save Operation, value: \(alert.textFields![0].text!) ")
+            
             //let partValueTextField = alert.textFields![0] as UITextField
             //guard let partValue = partValueTextField.text else {return}
             guard let partValue = alert.textFields![0].text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
