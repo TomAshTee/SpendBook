@@ -29,6 +29,7 @@
 		D6C4F5DE20304DA7004DADF4 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5DD20304DA7004DADF4 /* AccountVC.swift */; };
 		D6C4F5E020305A3D004DADF4 /* TodayHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C4F5DF20305A3D004DADF4 /* TodayHistoryCell.swift */; };
 		D6CCCD9025A9D5A80060C514 /* IconManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CCCD8F25A9D5A80060C514 /* IconManagerTests.swift */; };
+		D6CF4C8425C9F1050089DE23 /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CF4C8325C9F1050089DE23 /* AccountCell.swift */; };
 		D6D5AC9221B0863700C07F3E /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D5AC9121B0863700C07F3E /* HistoryCell.swift */; };
 		D6E253672208D2C3002213ED /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E253662208D2C3002213ED /* Operation.swift */; };
 		D6E5978325A79CA800B2769C /* HistoryVCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E5978225A79CA800B2769C /* HistoryVCUITests.swift */; };
@@ -82,6 +83,7 @@
 		D6C4F5DD20304DA7004DADF4 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		D6C4F5DF20305A3D004DADF4 /* TodayHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHistoryCell.swift; sourceTree = "<group>"; };
 		D6CCCD8F25A9D5A80060C514 /* IconManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconManagerTests.swift; sourceTree = "<group>"; };
+		D6CF4C8325C9F1050089DE23 /* AccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
 		D6D5AC9121B0863700C07F3E /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		D6E253662208D2C3002213ED /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		D6E5978225A79CA800B2769C /* HistoryVCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVCUITests.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				D6C4F5DF20305A3D004DADF4 /* TodayHistoryCell.swift */,
 				D6F377FA21F87E3E00123C7E /* SavingsCell.swift */,
 				D6D5AC9121B0863700C07F3E /* HistoryCell.swift */,
+				D6CF4C8325C9F1050089DE23 /* AccountCell.swift */,
 				D62B97A6202F3E2A00E4FAD7 /* RoundedGradientButton.swift */,
 				D6C4F5D5202F4A40004DADF4 /* GradientLayer.swift */,
 				D66937812031EBF90078228D /* AnimateTableView.swift */,
@@ -366,6 +369,7 @@
 				D6ED1DC721CEB19700459EEB /* SavingsManager.swift in Sources */,
 				D6E253672208D2C3002213ED /* Operation.swift in Sources */,
 				D6050ED8203402FA00B50184 /* AddTransactionVC.swift in Sources */,
+				D6CF4C8425C9F1050089DE23 /* AccountCell.swift in Sources */,
 				D6C4F5DA20304B1D004DADF4 /* HistoryVC.swift in Sources */,
 				D6C4F5DE20304DA7004DADF4 /* AccountVC.swift in Sources */,
 				D605902E20354C8F00A84047 /* TransactionManager.swift in Sources */,

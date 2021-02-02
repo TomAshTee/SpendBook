@@ -90,29 +90,7 @@ extension SavingsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .none
     }
-//    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-//        let deletAction = UITableViewRowAction(style: .destructive, title: "DELETE") { (rowAction, indexPathoForRow) in
-//            let alertControler = UIAlertController(title: "Delete", message: "Do you really want to delete account \"\(SavingsManager.instance.getAllSavings()[indexPathoForRow.row].name!)\" ?", preferredStyle: .alert)
-//            let confirmAction = UIAlertAction(title: "Yes", style: .destructive, handler: { (alert) in
-//
-//                self.removeSaving(atIndexPath: indexPathoForRow)
-//                SavingsManager.instance.fetchFromCoreData(completion: { (complete) in
-//                })
-//                tableView.deleteRows(at: [indexPathoForRow], with: .automatic)
-//            })
-//            let cancelAction = UIAlertAction(title: "No", style: .cancel, handler: { (UIAlertAction) in
-//
-//            })
-//
-//            alertControler.addAction(confirmAction)
-//            alertControler.addAction(cancelAction)
-//
-//            self.present(alertControler, animated: false, completion: nil)
-//        }
-//        deletAction.backgroundColor = #colorLiteral(red: 0.9647058824, green: 0.4666666667, blue: 0.6901960784, alpha: 1)
-//        return [deletAction]
-//    }
-    
+
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "DELETE") { (rowAction, view, boolValue) in
             // Do this when press button DELETE

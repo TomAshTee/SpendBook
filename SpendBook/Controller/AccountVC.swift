@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AccountVC: UIViewController {
 
@@ -15,16 +16,27 @@ class AccountVC: UIViewController {
     @IBOutlet weak var balanceLbl: UILabel!
     
     var currentAccountSelect = Saving()
+    var currentAccountSelectedRowValue: Int?
     var delegate: UpdateViewProtocol?
+    var isCurrentAccountSelected = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        acountTableView.delegate = self
+        acountTableView.dataSource = self
+        
         accountPicker.dataSource = self
         accountPicker.delegate = self
         
-        //accountPicker.selectRow(0, inComponent: 0, animated: true)
+        accountPicker.selectRow(0, inComponent: 0, animated: true)
 
+        //Is there any Savings
+        if SavingsManager.instance.countAccount() != 0 {
+            currentAccountSelect = SavingsManager.instance.getAccount(atRow: 0)
+            updateLabelInfo()
+            isCurrentAccountSelected = true
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,7 +101,7 @@ extension AccountVC {
         
         
         saving.name = name
-        saving.operations?.append(name)
+        saving.parts = ["1","2"]
         saving.value = 0
         SavingsManager.instance.todayDate(saving)
         
@@ -100,9 +112,23 @@ extension AccountVC {
             debugPrint("Colud not save: \(error.localizedDescription)")
             completion(false)
         }
-        
     }
     
+    func addNewPartToAccount(completion: (_ finished: Bool)->(), _ accountRow: Int,_ value: String) {
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        if let account = managedContext.object(with: SavingsManager.instance.getAccount(atRow: accountRow).objectID) as? Saving {
+            account.parts?.append(value)
+
+            print("Account: \(String(describing: account.name!)) ; Parts count: : \(account.parts!.count)")
+        }
+        do {
+            try managedContext.save()
+            completion(true)
+        } catch {
+            debugPrint("Colud not save new part to Accound: \(error.localizedDescription)")
+            completion(false)
+        }
+    }
 }
 
 //MARK: - PickerView Delegate & DataSource extension
@@ -125,9 +151,42 @@ extension AccountVC: UIPickerViewDelegate, UIPickerViewDataSource {
             return
         }
         currentAccountSelect = SavingsManager.instance.getAccount(atRow: row)
+        currentAccountSelectedRowValue = row
         updateLabelInfo()
     }
 }
+
+//MARK: - TableView Delegate & DataSource extension
+
+extension AccountVC: UITableViewDelegate, UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard isCurrentAccountSelected else {
+            return 0
+        }
+        
+        let list = SavingsManager.instance.getPartListFromAccount(currentAccountSelect)
+        
+        for i in list {
+            print("i: \(i)")
+        }
+        
+        return list.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        return UITableViewCell()
+    }
+    
+}
+
 
 //MARK: - Functions extension
 
@@ -150,6 +209,18 @@ extension AccountVC {
         }
         let operationAction = UIAlertAction(title: operationText, style: .default) { (action) in
             print("Save Operation, value: \(alert.textFields![0].text!) ")
+            //let partValueTextField = alert.textFields![0] as UITextField
+            //guard let partValue = partValueTextField.text else {return}
+            guard let partValue = alert.textFields![0].text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
+            
+            
+            self.addNewPartToAccount(completion: { (complete) in
+                if complete {
+                    print("Update labl ...")
+                } else {
+                    print("Can not add part value to Accont")
+                }
+            }, self.currentAccountSelectedRowValue!, partValue)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
@@ -159,6 +230,7 @@ extension AccountVC {
         self.present(alert, animated: true, completion: nil)
         
         delegate?.updateView()
+        acountTableView.reloadData()
         
     }
     
