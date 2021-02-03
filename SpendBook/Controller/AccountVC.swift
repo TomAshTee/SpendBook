@@ -34,6 +34,7 @@ class AccountVC: UIViewController {
         //Is there any Savings
         if SavingsManager.instance.countAccount() != 0 {
             currentAccountSelect = SavingsManager.instance.getAccount(atRow: 0)
+            currentAccountSelectedRowValue = 0
             updateLabelInfo()
             isCurrentAccountSelected = true
         }
@@ -116,6 +117,7 @@ extension AccountVC {
     func addNewPartToAccount(completion: (_ finished: Bool)->(), _ accountRow: Int,_ value: String) {
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
         if let account = managedContext.object(with: SavingsManager.instance.getAccount(atRow: accountRow).objectID) as? Saving {
+            print("Part value: \(value)")
             account.parts?.append(value)
 
             print("Account: \(String(describing: account.name!)) ; Parts count: : \(account.parts!.count)")
@@ -215,14 +217,15 @@ extension AccountVC {
         let operationAction = UIAlertAction(title: operationText, style: .default) { (action) in
             print("Save Operation, value: \(alert.textFields![0].text!) ")
             
-            //let partValueTextField = alert.textFields![0] as UITextField
-            //guard let partValue = partValueTextField.text else {return}
-            guard let partValue = alert.textFields![0].text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
-            
+            guard var partValue = alert.textFields![0].text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
+            if action.title == "Substract" {
+                partValue = "-" + partValue
+            }
             
             self.addNewPartToAccount(completion: { (complete) in
                 if complete {
                     print("Update labl ...")
+                    self.accountTableView.reloadData()
                 } else {
                     print("Can not add part value to Accont")
                 }

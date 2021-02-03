@@ -20,7 +20,7 @@ class AccountCell: UITableViewCell {
             valueLbl.text = "$" + String(value)
         } else {
             valueLbl.textColor = #colorLiteral(red: 0.9647058824, green: 0.4666666667, blue: 0.6901960784, alpha: 1)
-            valueLbl.text = "$-" + String(value)
+            valueLbl.text = "$" + String(value)
         }
         
         dateLbl.text = date
