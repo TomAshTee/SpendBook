@@ -14,8 +14,16 @@ class AccountCell: UITableViewCell {
     @IBOutlet weak var valueLbl: UILabel!
     
     
-    func configureCell() {
+    func configureCell(_ date: String, _ value: Int) {
+        if value >= 0 {
+            valueLbl.textColor = #colorLiteral(red: 0.2673969567, green: 0.8492315412, blue: 0.8062124848, alpha: 1)
+            valueLbl.text = "$" + String(value)
+        } else {
+            valueLbl.textColor = #colorLiteral(red: 0.9647058824, green: 0.4666666667, blue: 0.6901960784, alpha: 1)
+            valueLbl.text = "$-" + String(value)
+        }
         
+        dateLbl.text = date
     }
 
 }

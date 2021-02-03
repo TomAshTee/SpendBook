@@ -12,7 +12,7 @@ import CoreData
 class AccountVC: UIViewController {
 
     @IBOutlet weak var accountPicker: UIPickerView!
-    @IBOutlet weak var acountTableView: UITableView!
+    @IBOutlet weak var accountTableView: UITableView!
     @IBOutlet weak var balanceLbl: UILabel!
     
     var currentAccountSelect = Saving()
@@ -23,8 +23,8 @@ class AccountVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        acountTableView.delegate = self
-        acountTableView.dataSource = self
+        accountTableView.delegate = self
+        accountTableView.dataSource = self
         
         accountPicker.dataSource = self
         accountPicker.delegate = self
@@ -152,6 +152,7 @@ extension AccountVC: UIPickerViewDelegate, UIPickerViewDataSource {
         currentAccountSelect = SavingsManager.instance.getAccount(atRow: row)
         currentAccountSelectedRowValue = row
         updateLabelInfo()
+        accountTableView.reloadData()
     }
 }
 
@@ -168,20 +169,25 @@ extension AccountVC: UITableViewDelegate, UITableViewDataSource {
         guard isCurrentAccountSelected else {
             return 0
         }
-        
-        let list = SavingsManager.instance.getPartListFromAccount(currentAccountSelect)
-        
-        for i in list {
-            print("i: \(i)")
-        }
-        
-        return list.count
+        return SavingsManager.instance.getPartListFromAccount(currentAccountSelect).count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = accountTableView.dequeueReusableCell(withIdentifier: "accountCell") as? AccountCell else {
+            return UITableViewCell()
+        }
         
+        var value = 0
+        if let partsTable = currentAccountSelect.parts {
+            value = Int(partsTable[indexPath.row])!
+        }
+        var date = "date"
+        if let safeDate = currentAccountSelect.date {
+            date = safeDate
+        }
+        cell.configureCell(date, value)
         
-        return UITableViewCell()
+        return cell
     }
     
 }
@@ -230,7 +236,7 @@ extension AccountVC {
         self.present(alert, animated: true, completion: nil)
         
         delegate?.updateView()
-        acountTableView.reloadData()
+        accountTableView.reloadData()
         
     }
     
