@@ -101,7 +101,7 @@ extension AccountVC {
         let saving = Saving(context: managedContext)
         
         saving.name = name
-        saving.parts = ["1","2"]
+        saving.parts = []
         saving.value = 0
         SavingsManager.instance.todayDate(saving)
         
@@ -119,6 +119,12 @@ extension AccountVC {
         if let account = managedContext.object(with: SavingsManager.instance.getAccount(atRow: accountRow).objectID) as? Saving {
             print("Part value: \(value)")
             account.parts?.append(value)
+            
+            account.value = 0
+            for part in account.parts! {
+                account.value += Int32(part) ?? 0
+                print("Part Value to append: \(Int32(part)!)")
+            }
 
             print("Account: \(String(describing: account.name!)) ; Parts count: : \(account.parts!.count)")
         }
@@ -181,13 +187,10 @@ extension AccountVC: UITableViewDelegate, UITableViewDataSource {
         
         var value = 0
         if let partsTable = currentAccountSelect.parts {
-            value = Int(partsTable[indexPath.row])!
+            value = Int(partsTable[indexPath.row]) ?? 0
         }
-        var date = "date"
-        if let safeDate = currentAccountSelect.date {
-            date = safeDate
-        }
-        cell.configureCell(date, value)
+        
+        cell.configureCell(value)
         
         return cell
     }
@@ -226,6 +229,7 @@ extension AccountVC {
                 if complete {
                     print("Update labl ...")
                     self.accountTableView.reloadData()
+                    self.updateLabelInfo()
                 } else {
                     print("Can not add part value to Accont")
                 }

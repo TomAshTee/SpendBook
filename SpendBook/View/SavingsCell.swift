@@ -22,7 +22,7 @@ class SavingsCell: UITableViewCell {
             valueLbl.text = "$" + String(saving.value)
         } else {
             valueLbl.textColor = #colorLiteral(red: 0.9647058824, green: 0.4666666667, blue: 0.6901960784, alpha: 1)
-            valueLbl.text = "$-" + String(saving.value)
+            valueLbl.text = "$" + String(saving.value)
         }
     }
 }
