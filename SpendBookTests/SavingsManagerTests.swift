@@ -47,6 +47,11 @@ class SavingsManagerTests: XCTestCase {
             saving.date = formater.string(from: date)
             saving.name = "Account nr.\(i)"
             saving.parts = ["1", "2", "10", "-10", "3"]
+            
+            if i == testNumberOfSavings {
+                saving.parts = ["1", "2", "-3", "4", "-4"]
+            }
+            
             saving.value = 5
             
             sampleListOfSavings.append(saving)
@@ -80,5 +85,43 @@ class SavingsManagerTests: XCTestCase {
             XCTAssertEqual(account, "Account nr.\(i)")
             i += 1
         }
+    }
+    
+    func testThereAreSavings() throws {
+        let returnedBoolValue = SavingsManager.instance.isThereAnySavings()
+        XCTAssertTrue(returnedBoolValue)
+    }
+    
+    func testThereAreNoSavings() throws {
+        SavingsManager.instance.setList([])
+        let returnedBoolValue = SavingsManager.instance.isThereAnySavings()
+        XCTAssertFalse(returnedBoolValue)
+    }
+    
+    func testGetSummaryOfSavingsValue() throws {
+        let returnedSummaryValue = SavingsManager.instance.getSummaryOfSavings()
+        XCTAssertEqual(returnedSummaryValue, 25)
+    }
+    
+    func testGetFirstAccountFromList() throws {
+        let returnedAccount = SavingsManager.instance.getAccount(atRow: 0)
+        XCTAssertEqual(returnedAccount.name, "Account nr.1")
+    }
+    
+    func testGetLastAccountFromList() throws {
+        let returnedAccount = SavingsManager.instance.getAccount(atRow: 4)
+        XCTAssertEqual(returnedAccount.name, "Account nr.5")
+    }
+    
+    func testGetPartListFromFirstAccount() throws {
+        let account = SavingsManager.instance.getAccount(atRow: 0)
+        let partsList = SavingsManager.instance.getPartListFromAccount(account)
+        XCTAssertEqual(partsList, ["1", "2", "10", "-10", "3"])
+    }
+    
+    func testGetPartListFromLastAccount() throws {
+        let account = SavingsManager.instance.getAccount(atRow: 4)
+        let partsList = SavingsManager.instance.getPartListFromAccount(account)
+        XCTAssertEqual(partsList, ["1", "2", "-3", "4", "-4"])
     }
 }
