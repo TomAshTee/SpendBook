@@ -298,6 +298,7 @@
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1304" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYr-XC-9nA">
                                 <rect key="frame" x="273" y="75" width="86" height="50"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Savings summary"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="MOR-v4-FWg"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="gAY-QU-8m0"/>
