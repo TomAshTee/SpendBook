@@ -30,7 +30,7 @@ class HistoryVCUITests: XCTestCase {
         
         let app = XCUIApplication()
         app.launch()
-        
+
         app.tabBars["Tab Bar"].buttons["History"].tap()
         app.windows.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .textField).matching(identifier: "Select date").element(boundBy: 0).tap()
         app.datePickers.pickerWheels["2021"].adjust(toPickerWheelValue: "2020")

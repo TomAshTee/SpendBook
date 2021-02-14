@@ -39,6 +39,10 @@ class AccountVC: UIViewController {
             isCurrentAccountSelected = true
         }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        delegate?.updateView()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -83,6 +87,7 @@ class AccountVC: UIViewController {
         
     }
     @IBAction func finishBtnWasPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 
     @IBAction func addBtnWasPressed(_ sender: Any) {

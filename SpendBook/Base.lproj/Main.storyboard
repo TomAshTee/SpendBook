@@ -48,6 +48,7 @@
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CkT-qP-wjK">
                                 <rect key="frame" x="142" y="83" width="217" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="From date"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="217" id="CGP-Ph-ulB"/>
                                     <constraint firstAttribute="height" constant="30" id="CcI-IA-FXw"/>
@@ -75,6 +76,7 @@
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ess-hD-cld">
                                 <rect key="frame" x="142" y="130" width="217" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="To date"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="8Tk-Lz-oaF"/>
                                     <constraint firstAttribute="width" constant="217" id="G9k-g0-h7h"/>
@@ -501,6 +503,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$-58" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbA-TS-mhG">
                                 <rect key="frame" x="325.33333333333331" y="165" width="33.666666666666686" height="22"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Account balance"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="gx1-7n-6TJ"/>
                                 </constraints>
