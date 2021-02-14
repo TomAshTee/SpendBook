@@ -26,17 +26,41 @@ class HistoryVCUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testSummaryValueOfHistoryTransaction() throws {
+
+        let app = XCUIApplication()
+        app.tabBars["Tab Bar"].buttons["History"].tap()
+        app.textFields["From date"].tap()
+        app.datePickers.pickerWheels["2021"].adjust(toPickerWheelValue: "2019")
+        app.tables.cells.firstMatch.tap()
+        
+        print("Number of cell \(app.tables.cells.allElementsBoundByIndex.count)")
+        
+        let tableCells = app.tables.cells.allElementsBoundByIndex
+        var summaryValueOfCell: Int = 0
+        
+        for cell in tableCells {
+            var cellValue = cell.staticTexts["History value of transaction"].label
+            cellValue.remove(at: cellValue.startIndex)
+            summaryValueOfCell += Int(cellValue)!
+        }
+        
+        var summaryOfHistoryTransaction = app.staticTexts["Summary of history transaction"].label
+        summaryOfHistoryTransaction.remove(at: summaryOfHistoryTransaction.startIndex)
+        let summaryOfHistoryTransactionInt = Int(summaryOfHistoryTransaction)!
+        
+        XCTAssertEqual(summaryOfHistoryTransactionInt, summaryValueOfCell)
+    }
+    
+    func testInvalideDateRangeWarning() throws {
         
         let app = XCUIApplication()
-        app.launch()
-
         app.tabBars["Tab Bar"].buttons["History"].tap()
-        app.windows.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .textField).matching(identifier: "Select date").element(boundBy: 0).tap()
-        app.datePickers.pickerWheels["2021"].adjust(toPickerWheelValue: "2020")
-        app.tables.cells.firstMatch.tap()
-
+        app.textFields["To date"].tap()
+        app.datePickers.pickerWheels["2021"].adjust(toPickerWheelValue: "2019")
+        app.alerts["Hint"].scrollViews.otherElements.buttons["Ok"].tap()
+        
+        //ToDo: - Check date correction
         
     }
-
 }
