@@ -39,6 +39,7 @@ class MainVC: UIViewController{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // What kind of transaction it is ?
+        //AddTransaction
         if let viewController = segue.destination as? AddTransactionVC, let sender = sender as? UIButton {
             viewController.setTransactionBtn.backgroundColor = sender.backgroundColor
             viewController.colorForTransaction = sender.backgroundColor!
@@ -49,6 +50,10 @@ class MainVC: UIViewController{
                 viewController.textForDolarLbl = "$-"
                 viewController.signOfTransaction = "-"
             }
+            viewController.delegate = self
+        }
+        //SettingsVC
+        if let viewController = segue.destination as? SettingsVC {
             viewController.delegate = self
         }
     }

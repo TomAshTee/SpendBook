@@ -13,6 +13,8 @@ class SettingsVC: UIViewController {
     // Outlets
     @IBOutlet weak var historyIconSwitch: UISwitch!
     
+    var delegate: UpdateViewProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,5 +27,6 @@ class SettingsVC: UIViewController {
     }
     @IBAction func isHistoryIconEnableChange(_ sender: Any) {
         IconManager.instance.setIconEnable(historyIconSwitch.isOn)
+        delegate?.updateView()
     }
 }
