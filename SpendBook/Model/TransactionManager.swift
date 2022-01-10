@@ -9,8 +9,10 @@
 import UIKit
 import CoreData
 
+/// Management of transactions made by the user
 class TransactionManager {
     
+    /// Static field that allows to access singleton instance.
     static let instance = TransactionManager()
     
     // Private var
@@ -33,12 +35,17 @@ class TransactionManager {
         return true
     }
     
-    // Public Func - przekazujemy wszystkie transakcje z CoreData
-    public func setList(_ ofTransaction:[Transaction]){
+    /// Saving the list of transactions from Core Data to the manager.
+    /// - Parameter ofTransaction: Array fo Transaction from CoreData to set.
+    private func setList(_ ofTransaction:[Transaction]){
         _transactionList = ofTransaction
     }
     
-    //Pobranie transakcji z danego zakresu czasu
+    /// Retrieving transaction from specific period of time.
+    /// - Parameters:
+    ///   - fromDate: Transaction from this date.
+    ///   - toDate: Transaction to this date.
+    /// - Returns: Array of [Transaction] from period of time.
     public func getTransaction(_ fromDate: Date, _ toDate: Date) -> [Transaction] {
         var transactionFromDate = [Transaction]()
         let formater = DateFormatter()
@@ -67,7 +74,9 @@ class TransactionManager {
         return transactionFromDate
     }
     
-    // Pokazanie konkretnej tranzakcji z danego dnia
+    /// Get todays transaction with specific index number.
+    /// - Parameter transactionOfIndex: Index of transaction
+    /// - Returns: Transaction with a specific index.
     public func getToday(_ transactionOfIndex: Int) -> Transaction {
         var today = [Transaction]()
         _updateTodayDate()
@@ -80,12 +89,15 @@ class TransactionManager {
         return today[transactionOfIndex]
     }
     
-    // Pobranie jednej transakcjie ze wszytkich dni
+    /// Get transaction with specific index number form all transaction list.
+    /// - Parameter trancsationOfIndex: Index of transaction.
+    /// - Returns: Transaction with a specific index.
     public func getFromAll(_ trancsationOfIndex: Int) -> Transaction {
         return _transactionList[trancsationOfIndex]
     }
     
-    //Wartość transakcji ze wszystkich dni
+    /// Getting the sum of the values of all performed transactions.
+    /// - Returns: Summary value of all transactions.
     public func getSummaryValue() -> Int {
         var valueOfTransaction: Int32 = 0
         for transaction in _transactionList {
@@ -99,7 +111,8 @@ class TransactionManager {
         return Int(valueOfTransaction)
     }
     
-    // Wartość tranzakcji z aktualnego miesiąca
+    /// Getting the sum of the values of all performed transactions from actual month.
+    /// - Returns: Summary value of all transaction from actual month.
     public func getMonthlyValue() -> Int {
         var valueOfTransaction: Int32 = 0
          for transaction in _transactionList {
@@ -114,7 +127,8 @@ class TransactionManager {
         return Int(valueOfTransaction)
     }
     
-    // Wartość transakcji z danego dnia
+    /// Getting the sum of the transactions performed today.
+    /// - Returns: Summary value of transaction perfromed today.
     public func getTodayValue() -> Int{
         var valueOfTransaction: Int32 = 0
         for transaction in _transactionList {
@@ -130,7 +144,8 @@ class TransactionManager {
         return Int(valueOfTransaction)
     }
     
-    // Zwraca ilość tranzakcji z aktualnego dnia
+    /// Getting the number of transactions performed today.
+    /// - Returns: Number of transactions performed today.
     public func countToday() -> Int {
         var amount: Int = 0
         
@@ -145,11 +160,14 @@ class TransactionManager {
         return amount
     }
     
+    /// Getting the number of all transactions
+    /// - Returns: Number of all transactions
     public func countAll() -> Int {
         return _transactionList.count
     }
     
-    // Static func
+    /// Setting actual date for transaction.
+    /// - Parameter forTransaction: The transaction for which the date is to be set.
     static func todayDate(_ forTransaction: Transaction){
         let date = Date()
         let calendar = Calendar.current
@@ -167,6 +185,7 @@ class TransactionManager {
     
     //MARK: - Fetch from core data
     
+    /// Getting transactions from CoreData
     public func fetchFromCoreData(completion: (_ complete: Bool) -> ()) {
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Transaction")
@@ -181,6 +200,8 @@ class TransactionManager {
         }
     }
     
+    /// Remove transaction in specific indexPath
+    /// - Parameter indexPath: IndexPath of transaction to remove
     public func remove(transactionAt indexPath: IndexPath) {
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
         // Transaction list is reverse by the way it's display
